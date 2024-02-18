@@ -1,13 +1,13 @@
 <nav>
     <ul>
         <li>
-            <a href="/games">Link 01</a>
+            <a href="/games"><p>Link 01</p></a>
         </li>
         <li>
-            <a href="youtube.com">Link 02</a>
+            <a href="youtube.com"><p>Link 02</p></a>
         </li>
         <li>
-            <a href="youtube.com">Link 03</a>
+            <a href="youtube.com"><p>Link 03</p></a>
         </li>
     </ul>
 </nav>
@@ -37,9 +37,29 @@
     a {
         width: 100%;
         height: 100%;
-        border: 1px solid black;
-        display: inline-block;
-        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         box-sizing: border-box;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s;
+    }
+
+    a:hover {
+        background-color: rgb(75, 75, 75);
+    }
+
+    a:visited {
+        color: white;
+    }
+
+    a > p {
+        width: 100%;
+        height: 50%;
+        line-height: 200%;
+        margin: 0;
+        text-align: center;
+        border-right: 1px solid white;
     }
 </style>

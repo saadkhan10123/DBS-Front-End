@@ -28,10 +28,15 @@
 
     main {
         display: flex;
-        padding: 24px 64px;
+        padding: 24px 80px;
+        background-color: grey;
     }
 
     .slot {
         flex: 4;
+        background-color: white;
+        border-radius: 20px;
+        padding: 20px;
     }
+
 </style>

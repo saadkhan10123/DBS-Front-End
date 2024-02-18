@@ -1,4 +1,7 @@
 <script>
+    import Modal from "$lib/Modal.svelte";
+    import ChangePassword from "$lib/ChangePassword.svelte";
+
     /** @type {import('./$types').PageData} */
     // export let data;
     let data = {
@@ -8,6 +11,8 @@
         bio: "I am a software developer",
         profilePic: "/placeHolderPFP.png"
     }
+
+    let changingPassword = true
 </script>
 
 <div class="profile-section">
@@ -18,6 +23,12 @@
         <h2>User Name: {data.userName}</h2>
         <p>Email: {data.email}</p>
         <p>Bio: {data.bio}</p>
+        <button on:click={() => changingPassword = true}>Change Password</button>
+        {#if changingPassword}
+            <Modal on:disableModal = {() => changingPassword = false}>
+                <ChangePassword on:disableModal = {() => changingPassword = false}/>
+            </Modal>
+        {/if}
     </div>
 </div>
 

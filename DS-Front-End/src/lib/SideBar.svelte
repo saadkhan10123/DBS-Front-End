@@ -18,8 +18,9 @@
         padding: 10px 10px;
         flex: 1;
         border: 1px solid yellow;
-        margin-left: 20px;
+        margin-left: 50px;
         border-radius: 5px;
+        background-color: white;
     }
 
     .side-item {

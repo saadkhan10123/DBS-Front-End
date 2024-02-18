@@ -1,6 +1,8 @@
 <script>
     export let data;
 
+    import LeaderBoard from '$lib/Games/LeaderBoard.svelte';
+
     console.log(data);
     let post = data.post
 </script>
@@ -10,14 +12,12 @@
     <body>
         {post.body}
     </body>
+    <LeaderBoard />
     <a href="/games">Back to games</a>
 </div>
 
 <style>
     .gamePage {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         padding: 24px 64px;
     }
 

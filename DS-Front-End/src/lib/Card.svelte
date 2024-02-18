@@ -24,4 +24,8 @@
         height: 256px;
         width: 100%;
     }
+
+    .card {
+        overflow: hidden;
+    }
 </style>
