@@ -25,7 +25,6 @@
     .profile-section {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
         align-items: center;
         padding: 24px 64px;
         background-color: grey;
@@ -37,5 +36,9 @@
     .profile-pic {
         overflow: hidden;
         border-radius: 50%;
+    }
+
+    .profile-info {
+        padding: 0 24px;
     }
 </style>

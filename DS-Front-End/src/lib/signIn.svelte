@@ -1,57 +1,46 @@
-<script>
-    export let signedIn = false;
-
-    let name = "John Doe"
-</script>
-
-<div class="signin-status">
-    {#if signedIn}
-        <a href="/profile">
-            <div class="nav-profile">
-                <img src="/placeHolderPFP.png" alt="Profile">
-                <p>{name}</p>
-            </div>
-        </a>
-    {:else}
-        <div class="signin-options">
-            <a href="/signIn">Sign In</a>
-            <a href="/signUp">Sign Up</a>
-        </div>
-    {/if}
+<div class="sign-in">
+    <h1>Sign In</h1>
+    <form action="">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <button type="submit">Sign In</button>
+    </form>
 </div>
 
 <style>
-    .signin-status {
-        text-align: right;
-    }
-
-    .nav-profile {
+    .sign-in {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
-        justify-content: space-around;
-        padding: 5px 0px;
+        padding: 24px 64px;
+        background-color: white;
+        border-radius: 10px;
+        margin: 0 auto;
+        width: 40svw;
     }
 
-    .nav-profile img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
-
-    .signin-options {
+    form {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
     }
 
-    a {
-        text-decoration: none;
-        color: black;
+    label {
+        padding: 5px;
     }
 
-    a:visited {
-        color: black;
+    input {
+        padding: 5px;
+        margin: 5px 0;
+    }
+
+    button {
+        padding: 5px;
+        margin: 5px 0;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
     }
 </style>
