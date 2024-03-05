@@ -16,7 +16,7 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 10px 10px;
-        border: 1px solid pink;
+        border: 2px solid #23313d;
         flex: 5;
         padding: 10px 10px;
         border-radius: 5px;

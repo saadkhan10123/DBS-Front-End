@@ -26,7 +26,7 @@
         text-decoration: none;
         color: white;
         font-size: 24px;
-        padding: 16px 10px;
+        padding: 16px 16px;
         box-sizing: border-box;
         width: 100%;
         transition: all 0.2s;
