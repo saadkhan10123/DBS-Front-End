@@ -15,17 +15,18 @@
     .side-bar {
         display: flex;
         flex-direction: column;
-        padding: 10px 10px;
+        gap: 1.5em;
+        padding: 1em;
         flex: 1;
-        border: 1px solid yellow;
         margin-left: 50px;
-        border-radius: 5px;
-        background-color: white;
+        border-radius: 1em;
+        background-color: #4e7f7d;
     }
 
     .side-item {
         height: 30px;
-        border: 1px solid green;
-        margin-bottom: 10px;
+        background-color: #70d38b;
+        padding: 1.5em;
+        border-radius: 1em;
     }
 </style>

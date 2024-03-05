@@ -1,3 +1,13 @@
+<script>
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
+
+    function signUp() {
+        dispatch("signUp");
+    }
+</script>
+
 <div class="sign-in">
     <h1>Sign In</h1>
     <form action="">
@@ -6,6 +16,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
         <button type="submit">Sign In</button>
+        <button type="button" on:click={signUp}>Sign Up</button>
     </form>
 </div>
 

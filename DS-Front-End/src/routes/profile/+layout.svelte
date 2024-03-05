@@ -1,7 +1,28 @@
 <script>
     /** @type {import('./$types').LayoutData} */
-    //export let data;
     import Header from "$lib/Header/Header.svelte";
+    import OptionsBar from "$lib/User/OptionsBar.svelte";
+
+    let options = [
+        {
+            name: "Profile",
+            link: "/profile/me"
+        },
+        {
+            name: "Settings",
+            link: "/settings"
+        },
+        {
+            name: "My Highscores",
+            link: `/highscores`
+        },
+        {
+            name: "Logout",
+            link: "/profile/logout"
+        }
+    ]
+
+    let active = "Profile"
 </script>
 
 <header>
@@ -9,7 +30,10 @@
 </header>
 
 <main>
-    <slot></slot>
+    <div class="user-options">
+        <OptionsBar { options } { active }/>
+        <slot></slot>
+    </div>
 </main>
 
 <footer>
@@ -23,4 +47,8 @@
         flex: 1;
     }
 
+    .user-options {
+        display: flex;
+        height: 100%;
+    }
 </style>

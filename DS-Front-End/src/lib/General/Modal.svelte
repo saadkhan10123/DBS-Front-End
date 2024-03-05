@@ -4,7 +4,6 @@
     const dispatch = createEventDispatcher();
 
     function disableModal() {
-        console.log("Modal Disabled");
         dispatch("disableModal");
     }
 </script>
@@ -33,6 +32,6 @@
         margin: 15% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 50%;
     }
 </style>

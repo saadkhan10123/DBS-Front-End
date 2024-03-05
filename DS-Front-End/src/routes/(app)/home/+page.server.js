@@ -13,7 +13,7 @@ export async function load() {
     }).promise()
     
     
-    const result = await pool.query('SELECT * FROM class')
+    const result = await pool.query('SELECT * FROM actor')
     let actor = result[0]
 
     return {

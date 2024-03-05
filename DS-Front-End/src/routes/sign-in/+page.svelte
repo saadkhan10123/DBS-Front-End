@@ -11,9 +11,9 @@
 
 <main>
     {#if signingIn}
-        <SignIn />
+        <SignIn on:signUp={() => signingIn = false}/>
     {:else}
-        <SignUp />
+        <SignUp on:signIn={() => signingIn = true} />
     {/if}
 </main>
 

@@ -1,4 +1,5 @@
 <script>
+    import { createEventDispatcher } from "svelte";
     let signingIn = false;
     let userName = "";
     let email = "";
@@ -11,6 +12,14 @@
         } else {
             console.log("Passwords do not match");
         }
+    }
+
+    const dispatch = createEventDispatcher();
+
+    function signIn() {
+        console.log("Signing In");
+        dispatch("signIn");
+
     }
 </script>
 
@@ -25,7 +34,8 @@
         <input type="password" id="password" name="password" required bind:value={password}>
         <label for="confirmPassword">Confirm Password:</label>
         <input type="password" id="confirmPassword" name="confirmPassword" required bind:value={confirmPassword}>
-        <button type="submit">Sign Up</button>
+        <button type="submit" on:click={ signUp }>Sign Up</button>
+        <button type="button" on:click={ signIn }>Sign In</button>
     </form>
 </div>
 

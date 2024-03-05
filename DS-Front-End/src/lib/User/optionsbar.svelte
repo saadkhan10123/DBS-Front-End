@@ -1,11 +1,11 @@
 <script>
-    export let options ;
-
+    export let options;
+    export let active;
 </script>
 
 <div class="options-bar">
     {#each options as option}
-        <a href={option.link}>{option.name}</a>
+        <a class:active = {active === option.name} class="option" href={option.link}>{option.name}</a>
     {/each}
 </div>
 
@@ -15,25 +15,32 @@
         flex-direction: column;
         justify-content: start;
         flex: 3;
-        background-color: #53a788;
+        background-color: #4e7f7d;
         height: 100%;
         box-sizing: border-box;
         padding-top: 15px;
     }
+    
 
-    a {
+    .option {
         display: block;
         text-decoration: none;
         color: white;
         font-size: 24px;
-        padding: 16px 16px;
+        padding: 1em 1em;
         box-sizing: border-box;
         width: 100%;
         transition: all 0.2s;
     }
 
-    a:hover {
-        color: #70d38b;
+    .options-bar > a:hover {
+        color: #53a788;
         background-color: white;
     }
+
+    .active {
+        color: #53a788;
+        background-color: white;
+    }
+
 </style>

@@ -6,7 +6,7 @@
 
 <div class="signin-status">
     {#if signedIn}
-        <a href="/profile">
+        <a href="/profile/me">
             <div class="nav-profile">
                 <img src="/placeHolderPFP.png" alt="Profile">
                 <p>{name}</p>

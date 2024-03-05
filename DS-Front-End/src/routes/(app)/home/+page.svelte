@@ -8,7 +8,7 @@
 </script>
 
 <div class="main-screen">
-	<div class="heading">Latest High Scores</div>
+	<h1>Latest Highscores</h1>
 	<GameGrid data = {data.posts}/>
 </div>
 
@@ -20,4 +20,9 @@
 		color: white;
 	}
 
+	h1 {
+		font-size: 2em;
+		margin: 0;
+		padding: 1em 1em 1.5em;
+	}
 </style>
