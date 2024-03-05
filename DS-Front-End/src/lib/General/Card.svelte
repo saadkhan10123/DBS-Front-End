@@ -5,6 +5,7 @@
 <div class="card">
     <a href="/games/{data.id}">
         <div>
+            <img src="/placeHolderPFP.png" alt="">
             <h1>{data.title}</h1>
             <body>
                 {data.body}
@@ -27,5 +28,11 @@
 
     .card {
         overflow: hidden;
+    }
+
+    img {
+        border-radius: 50%;
+        height: 4em;
+        aspect-ratio: 1 / 1;
     }
 </style>

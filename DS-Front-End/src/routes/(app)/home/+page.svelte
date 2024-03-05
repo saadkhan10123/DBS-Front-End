@@ -17,6 +17,7 @@
 		padding: 0;
 		display: flex;
 		flex-direction: column;
+		color: white;
 	}
 
 </style>

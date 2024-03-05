@@ -27,7 +27,7 @@
 
     .slot {
         flex: 4;
-        background-color: white;
+        background-color: #4e7f7d;
         border-radius: 20px;
         padding: 20px;
     }
