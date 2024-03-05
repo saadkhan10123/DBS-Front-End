@@ -44,10 +44,11 @@
         color: white;
         text-decoration: none;
         transition: all 0.3s;
+        font-size: 1em;
     }
 
     a:hover {
-        background-color: rgb(75, 75, 75);
+        background-color: #639e9c;
     }
 
     a:visited {

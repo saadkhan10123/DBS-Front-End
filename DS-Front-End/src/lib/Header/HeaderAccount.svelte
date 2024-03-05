@@ -62,35 +62,34 @@
         margin: 0px 5px;
         border-radius: 5px;
         background-color: rgb(75, 75, 75);
-        color: white;
         transition: all 0.3s;
         cursor: pointer;
-        border: 1px solid black;
         padding: 0;
         width: auto;
         height: auto;
+        border: none;
+        font-size: 1em;
     }
     
     button > a {
         display: block;
         width: 100%;
         height: 100%;
-        padding: 5px 10px;
+        padding: .5em 1.2em;
         text-align: center;
         box-sizing: border-box;
     }
 
     .sign-in {
-        background-color: white;
+        background-color: rgba(255, 255, 255, 0);
     }
 
     .sign-in > a {
-        color: black;
+        color: white;
     }
 
     .sign-in:hover {
-        background-color: black;
-        border: 1px solid white;
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     .sign-in:hover > a {
@@ -98,10 +97,14 @@
     }
 
     .sign-up {
-        background-color: green;
+        background-color: white;
+    }
+
+    .sign-up > a {
+        color: #4e7f7d;
     }
 
     .sign-up:hover {
-        background-color: rgb(76, 183, 76);
+        background-color: rgb(216, 216, 216);
     }
 </style>

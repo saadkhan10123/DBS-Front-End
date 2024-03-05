@@ -1,8 +1,8 @@
 <script>
     /** @type {import('./$types').LayoutData} */
     //export let data;
-    import Header from "$lib/Header.svelte";
-    import SideBar from "$lib/SideBar.svelte";
+    import Header from "$lib/Header/Header.svelte";
+    import SideBar from "$lib/General/SideBar.svelte";
 </script>
 
 <header>
@@ -15,21 +15,14 @@
     </div>
     <SideBar />
 </main>
-
 <footer>
 
 </footer>
 
 <style>
-    :global(body) {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-
     main {
         display: flex;
         padding: 24px 80px;
-        background-color: grey;
     }
 
     .slot {

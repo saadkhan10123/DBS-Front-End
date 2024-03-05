@@ -1,7 +1,7 @@
 <script>
-    import NavBar from "./NavBar.svelte";
+    import NavBar from "./Nav/NavBar.svelte";
     import HeaderAccount from "./HeaderAccount.svelte";
-    let signedIn = false;
+    let signedIn = true;
 </script>
 
 <div class="header">
@@ -19,9 +19,9 @@
 <style>
     .header {
         display: flex;
-        background-color: black;
+        background-color: #4e7f7d;
         color: white;
-        height: 50px;
+        height: 4em;
     }
 
     .title {

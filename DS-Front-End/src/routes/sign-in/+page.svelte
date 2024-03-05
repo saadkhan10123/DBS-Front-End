@@ -1,6 +1,6 @@
 <script>
-    import SignIn from "$lib/signIn.svelte";
-    import SignUp from "$lib/SignUp.svelte";
+    import SignIn from "$lib/User/signIn.svelte";
+    import SignUp from "$lib/User/SignUp.svelte";
 
     let signingIn = false;
 </script>
@@ -19,9 +19,6 @@
 
 <style>
     :global(body) {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-        height: 100svh;
         display: flex;
         flex-direction: column;
     }
@@ -30,9 +27,14 @@
         margin: 0;
     }
 
+    header {
+        background-color: #4e7f7d;
+        color: white;
+        height: 4em;
+    }
+
     main {
         box-sizing: border-box;
-        background-color: grey;
         display: flex;
         justify-content: center;
         align-items: center;

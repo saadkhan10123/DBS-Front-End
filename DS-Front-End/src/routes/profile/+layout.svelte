@@ -1,7 +1,7 @@
 <script>
     /** @type {import('./$types').LayoutData} */
     //export let data;
-    import Header from "$lib/Header.svelte";
+    import Header from "$lib/Header/Header.svelte";
 </script>
 
 <header>
@@ -17,13 +17,10 @@
 </footer>
 
 <style>
-    :global(body) {
-        margin: 0;
-        font-family: 'Roboto', sans-serif;
-    }
-
     main {
         display: flex;
-        padding: 24px 64px;
+        flex-direction: column;
+        flex: 1;
     }
+
 </style>
