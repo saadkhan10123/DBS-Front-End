@@ -17,13 +17,18 @@
 <style>
     h1 {
         display: inline;
+        background-color: #53a788;
+        color: white;
     }
 
     div {
-        border: 1px solid red;
+        border: 1px solid #33505d;
         border-radius: 5px;
         height: 256px;
         width: 100%;
+
+        background-color: #53a788;
+        color: white;
     }
 
     .card {

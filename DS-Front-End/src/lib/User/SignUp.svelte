@@ -17,7 +17,7 @@
 <div class="sign-up">
     <h1>Sign Up</h1>
     <form action="" on:submit={signUp}>
-        <label for="userName">User Name</label>
+        <label for="userName">Username:</label>
         <input type="text" id="userName" name="userName" required bind:value={userName}>
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required bind:value={email}>
@@ -31,36 +31,60 @@
 
 <style>
     .sign-up {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 24px 64px;
-        background-color: white;
-        border-radius: 10px;
-        margin: 0 auto;
-        width: 40svw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 32px 80px;
+    color: #fff;
+    background-color: #428d6d;
+    border-radius: 12px;
+    margin: 0 auto;
+    width: 45vw;
+    box-shadow: 0 4px 8px rgba(244, 192, 192, 0.15);
+    transition: all 0.2s ease-in-out;
+    }
+
+
+    h1 {
+    margin: 0 0 12px;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
     }
 
     form {
-        display: flex;
-        flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
     }
 
     label {
-        padding: 5px;
+    padding: 8px 10px;
+    font-size: 16px;
+    color: #181c2d;
     }
 
     input {
-        padding: 5px;
-        margin: 5px 0;
+    padding: 8px 10px;
+    border: 1px solid #cbffd8;
+    border-radius: 4px;
+    font-size: 14px;
     }
 
     button {
-        padding: 5px;
-        margin: 5px 0;
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        border-radius: 5px;
+    padding: 12px 24px;
+    margin: 16px 0 8px 0;
+    background-color: #23313d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    }
+
+    button:hover,
+    button:focus {
+    background-color: #213a45;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 </style>

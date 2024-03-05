@@ -46,8 +46,8 @@
                 <img src={data.profilePic} alt="Profile">
             </div>
             <div class="profile-info">
-                <h2>User Name: {data.userName} </h2>
-                <p>Email: {data.email}</p>
+                <h2>{data.userName} </h2>
+                <p>Email ID: {data.email}</p>
                 <p>Nationality: {data.nationality}</p>
                 <button class="change-password" on:click={() => changingPassword = true}>Change Password</button>
                 {#if changingPassword}
@@ -95,8 +95,9 @@
     }
 
     .change-password {
-        padding: 8px 16px;
+        padding: 12px 32px;
         border-radius: 5px;
+        font-size: 1em;
         background-color: #70d38b;
         color: white;
         border: none;
