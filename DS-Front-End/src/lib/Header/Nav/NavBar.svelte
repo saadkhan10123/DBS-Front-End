@@ -4,10 +4,10 @@
             <a href="/games"><p>Link 01</p></a>
         </li>
         <li>
-            <a href="youtube.com"><p>Link 02</p></a>
+            <a href="https://www.youtube.com/"><p>Link 02</p></a>
         </li>
         <li>
-            <a href="youtube.com"><p>Link 03</p></a>
+            <a href="https://www.youtube.com/"><p>Link 03</p></a>
         </li>
     </ul>
 </nav>
