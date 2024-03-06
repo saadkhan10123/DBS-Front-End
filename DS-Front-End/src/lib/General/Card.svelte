@@ -39,13 +39,20 @@
         width: 100%;
         color: white;
         padding: 1em;
+        text-decoration: none;
         box-sizing: border-box;
     }
 
     .card {
         overflow: hidden;
-        background-color: #70d38b;
-        border-radius: 5px;
+        background-color: #222222;
+        border: 1px solid #ff6961;
+        border-radius: 1em;
+        transition: all 0.3s;
+    }
+
+    .card:hover {
+        scale: 1.025;
     }
 
     .profile-img {

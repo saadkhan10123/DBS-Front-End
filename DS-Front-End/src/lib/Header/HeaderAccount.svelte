@@ -30,7 +30,8 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        gap: 1em;
         padding: 5px 0px;
     }
 

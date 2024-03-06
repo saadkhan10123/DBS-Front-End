@@ -19,9 +19,14 @@
 <style>
     .header {
         display: flex;
-        background-color: #23313d;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        background-color: #f74d40;
         color: white;
         height: 4em;
+        width: 100svw;
     }
 
     .title {
@@ -30,7 +35,7 @@
 
     .title > a{
         text-align: center;
-        padding: 5px;
+        padding: 20px 32px;
         width: 100%;
         height: 100%;
         display: inline-block;

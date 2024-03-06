@@ -23,11 +23,12 @@
     main {
         display: flex;
         padding: 24px 80px;
+        margin-top: 4.5em;
     }
 
     .slot {
         flex: 4;
-        background-color: #4e7f7d;
+        background-color: #1a1a1a;
         border-radius: 20px;
         padding: 20px;
     }

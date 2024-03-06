@@ -15,7 +15,7 @@
         flex-direction: column;
         justify-content: start;
         flex: 3;
-        background-color: #4e7f7d;
+        background-color: #f74d40;
         height: 100%;
         box-sizing: border-box;
         padding-top: 15px;
@@ -26,7 +26,7 @@
         display: block;
         text-decoration: none;
         color: white;
-        font-size: 24px;
+        font-size: 1.2em;
         padding: 1em 1em;
         box-sizing: border-box;
         width: 100%;
@@ -34,12 +34,12 @@
     }
 
     .options-bar > a:hover {
-        color: #53a788;
+        color: #ff6961;
         background-color: white;
     }
 
     .active {
-        color: #53a788;
+        color: #ff6961;
         background-color: white;
     }
 

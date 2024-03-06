@@ -45,6 +45,7 @@
         display: flex;
         flex-direction: column;
         flex: 1;
+        margin-top: 4em;
     }
 
     .user-options {

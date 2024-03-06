@@ -13,10 +13,10 @@
 
 <style>
     .grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		gap: 2em 1.5em;
+		display: flex;
+		gap: 2em;
         flex: 5;
+        flex-direction: column;
         padding: 10px 10px;
         border-radius: 5px;
 	}

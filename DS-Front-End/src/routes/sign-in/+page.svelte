@@ -1,12 +1,13 @@
 <script>
     import SignIn from "$lib/User/signIn.svelte";
     import SignUp from "$lib/User/SignUp.svelte";
+	import Header from "../../lib/Header/Header.svelte";
 
     let signingIn = false;
 </script>
  
 <header>
-    <h1>Site Name</h1>
+    <Header />
 </header>
 
 <main>
@@ -21,10 +22,6 @@
     :global(body) {
         display: flex;
         flex-direction: column;
-    }
-
-    h1 {
-        margin: 0;
     }
 
     header {

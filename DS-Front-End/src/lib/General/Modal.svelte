@@ -24,14 +24,8 @@
         height: 100svh;
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-content {
-        background-color: white;
-        border-radius: 10px;
-        margin: 15% auto;
-        padding: 20px;
-        border: 1px solid #888;
-        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 </style>

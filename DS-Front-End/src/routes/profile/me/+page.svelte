@@ -52,8 +52,10 @@
         flex-direction: row;
         align-items: center;
         padding: 24px 64px;
-        background-color: white;
-        border-radius: 10px;
+        background-color: #222222;
+        color: white;
+        border-radius: 1em;
+
     }
 
     .profile-pic {
@@ -67,15 +69,15 @@
 
     .change-password {
         padding: 12px 32px;
-        border-radius: 5px;
+        border-radius: 1em;
         font-size: 1em;
-        background-color: #70d38b;
+        background-color: #121212;
         color: white;
         border: none;
         cursor: pointer;
     }
 
     .change-password:hover {
-        background-color: #66c17e;
+        background-color: #ff6961;
     }
 </style>
