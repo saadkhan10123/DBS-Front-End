@@ -11,13 +11,13 @@
 <div class="sign-in">
     <h1>Sign In</h1>
     <form action="">
-        <label for="email">Email:</label>
+        <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
-        <label for="password">Password:</label>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
         <div class="button-container">
             <button type="submit">Sign In</button>
-            <button type="button" on:click={signUp}>Sign Up</button>
+            <button type="button" class="sign-up-button" on:click={signUp}>Sign Up</button>
         </div>
     </form>
 </div>
@@ -80,6 +80,10 @@
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+    }
+
+    .sign-up-button {
+        background-color: #121212;
     }
 
     button:hover,
