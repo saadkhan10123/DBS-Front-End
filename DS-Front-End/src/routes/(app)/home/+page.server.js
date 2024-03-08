@@ -13,7 +13,7 @@ export async function load() {
     }).promise()
     
     
-    const result = await pool.query('SELECT * FROM actor')
+    const result = await pool.query(`SELECT * FROM ${process.env.TUPLE_NAME}`)
     let actor = result[0]
 
     return {
