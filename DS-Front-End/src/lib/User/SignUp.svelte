@@ -39,7 +39,7 @@
         <input type="nationality" id="nationality" name="nationality" not required bind:value={nationality}> 
         <div class="button-container">
             <button type="submit" on:click={ signUp }>Sign Up</button>
-            <button type="button" on:click={ signIn }>Sign In</button>
+            <button type="button" class="sign-in-button" on:click={ signIn }>Sign In</button>
         </div>
     </form>
 </div>
@@ -105,6 +105,10 @@
         border-radius: 8px;
         cursor: pointer;
         transition: all 0.2s ease-in-out;
+    }
+
+    .sign-in-button {
+        background-color: #121212;
     }
 
     button:hover,
