@@ -1,7 +1,7 @@
 <script>
     import SignIn from "$lib/User/signIn.svelte";
     import SignUp from "$lib/User/SignUp.svelte";
-	import Header from "../../lib/Header/Header.svelte";
+	import Header from "$lib/Header/Header.svelte";
 
     let signingIn = false;
 </script>

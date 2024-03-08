@@ -14,6 +14,7 @@
         background-color: #121212;
         display: flex;
         flex-direction: column;
+        color: white;
     }
   
   /* Removed font face rules as they are not needed for this pixelated font */

@@ -15,7 +15,6 @@
     .grid {
 		display: flex;
 		gap: 2em;
-        flex: 5;
         flex-direction: column;
         padding: 10px 10px;
         border-radius: 5px;
