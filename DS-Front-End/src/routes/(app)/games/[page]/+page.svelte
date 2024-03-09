@@ -8,10 +8,10 @@
 </script>
 
 <div class="gamePage">
-    <h1>{post.title}</h1>
-    <body>
+    <h1>Game Title {post.title}</h1>
+    <main>
         {post.body}
-    </body>
+    </main>
     <LeaderBoard />
     <a href="/games">Back to games</a>
 </div>

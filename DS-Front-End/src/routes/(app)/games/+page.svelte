@@ -3,8 +3,7 @@
 import GameCard from '$lib/Games/GameCard.svelte';
 
     export let data;
-    let games = data.games;
-
+    let games = data.games.slice(0, 10);
 </script>
 
 <div class="gamesGrid">

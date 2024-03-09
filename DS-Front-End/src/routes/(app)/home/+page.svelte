@@ -3,8 +3,6 @@
 
 	export let data;
 
-	console.log(data.actor);
-	console.log(data)
 </script>
 
 <div class="main-screen">

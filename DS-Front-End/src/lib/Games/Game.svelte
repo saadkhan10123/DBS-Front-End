@@ -11,7 +11,9 @@
 
 <style>
     .game-entry {
-        margin-bottom: 24px;
-        border: 1px solid green;
+        background-color: #222222;
+        padding: 1em;
+        border-radius: 1em;
+        margin: .5rem;
     }
 </style>
