@@ -3,6 +3,7 @@
 
 </script>
 
+<!-- Single entry for latest highscores -->
 <div class="game-entry">
     <h2>{game.playerName}</h2>
     <p>Score: {game.score}</p>
@@ -12,6 +13,6 @@
 <style>
     .game-entry {
         margin-bottom: 24px;
-        border: 1px solid green;
+        border: 1px solid #ff6961;
     }
 </style>

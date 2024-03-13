@@ -87,6 +87,7 @@
         background-color: #1a1a1a;
         color: white;
         border-radius: 4px;
+        outline: none;
         font-size: 12px;
     }
 

@@ -1,5 +1,5 @@
 <script>
-    export let signedIn = false;
+    export let signedIn = true;
     
     let name = "John Doe"
 </script>
@@ -21,91 +21,74 @@
 </div>
 
 <style>
-    .signin-status {
-        text-align: right;
-        height: 100%;
+.signin-status {
+    text-align: right;
+    height: 100%;
+}
+
+.nav-profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    padding: 5px 0px;
+}
+
+.nav-profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+   
+    cursor: pointer;
+}
+
+.signin-options {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+button {
+    margin: 0px 5px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    cursor: pointer;
+    padding: 0.5em 1.2em; 
+    text-align: center;
+    box-sizing: border-box;
+    border: none;
+    font-size: 1em;
     }
 
-    .nav-profile {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 1em;
-        padding: 5px 0px;
-    }
+.sign-in {
+    background-color: rgba(75, 75, 75, 0.2); 
+    color: white; 
+}
 
-    .nav-profile img {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-    }
+.sign-in:hover {
+    background-color: rgba(75, 75, 75, 0.4); 
+}
 
-    .signin-options {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        vertical-align: middle;
-        justify-content: center;
-    }
+.sign-up {
+    background-color: white;
+    color: #4e7f7d;
+}
 
-    a {
-        text-decoration: none;
-        color: white;
-    }
+.sign-up:hover {
+    background-color: rgb(216, 216, 216);
+}
 
-    a:visited {
-        color: white;
-    }
-
-    button {
-        margin: 0px 5px;
-        border-radius: 5px;
-        background-color: rgb(75, 75, 75);
-        transition: all 0.3s;
-        cursor: pointer;
-        padding: 0;
-        width: auto;
-        height: auto;
-        border: none;
-        font-size: 1em;
-    }
-    
-    button > a {
-        display: block;
-        width: 100%;
-        height: 100%;
-        padding: .5em 1.2em;
-        text-align: center;
-        box-sizing: border-box;
-    }
-
-    .sign-in {
-        background-color: rgba(255, 255, 255, 0);
-    }
-
-    .sign-in > a {
-        color: white;
-    }
-
-    .sign-in:hover {
-        background-color: rgba(255, 255, 255, 0.2);
-    }
-
-    .sign-in:hover > a {
-        color: white;
-    }
-
-    .sign-up {
-        background-color: white;
-    }
-
-    .sign-up > a {
-        color: #4e7f7d;
-    }
-
-    .sign-up:hover {
-        background-color: rgb(216, 216, 216);
-    }
 </style>
