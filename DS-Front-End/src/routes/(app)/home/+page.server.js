@@ -4,7 +4,7 @@ import mysql from 'mysql2'
 import dotenv from 'dotenv'
 dotenv.config()
 
-export async function load() {
+export async function load({ locals }) {
     const pool = mysql.createPool({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
