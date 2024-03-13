@@ -2,8 +2,12 @@
 	import GameGrid from "$lib/General/GameGrid.svelte";
 
 	export let data;
+<<<<<<< HEAD
 	console.log(data.actor);
 	console.log(data)
+=======
+
+>>>>>>> 146a842838af86f2955abb7c2844b6eadc62f8bd
 </script>
 
 <div class="main-screen">

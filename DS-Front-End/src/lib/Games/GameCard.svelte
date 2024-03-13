@@ -7,7 +7,7 @@
 <!-- Card for a single game -->
 
 <div class="game-card">
-    <a href={game.page}>
+    <a href={`games/${game.id}`}>
         <div class="img-container">
             <img src="game-pic.png" alt="Game Image">            
             <div class="game-data">
@@ -23,7 +23,17 @@
     .game-card {
         border-radius: 1em;
         overflow: hidden;
+<<<<<<< HEAD
         transition: all 0.3s;
+=======
+        cursor: pointer;
+        transition: scale 0.2s ease-in-out;
+    }
+
+    .game-card > a {
+        text-decoration: none;
+        color: white;
+>>>>>>> 146a842838af86f2955abb7c2844b6eadc62f8bd
     }
 
     .game-card:hover {

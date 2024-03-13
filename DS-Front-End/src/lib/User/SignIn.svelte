@@ -6,11 +6,23 @@
     function signUp() {
         dispatch("signUp");
     }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        dispatch("submit", data)
+    }
+
+    export let form;
+
+    console.log(form)
 </script>
 
 <div class="sign-in">
     <h1>Sign In</h1>
-    <form action="">
+    <form method="POST" action="/sign-in?/login" on:submit>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
         <label for="password">Password</label>

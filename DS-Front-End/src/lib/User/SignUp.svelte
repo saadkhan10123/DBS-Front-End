@@ -7,26 +7,30 @@
     let confirmPassword = "";
     let nationality = "";
 
-    function signUp() {
-        if (password === confirmPassword) {
-            console.log("Signing Up");
-        } else {
-            console.log("Passwords do not match");
-        }
-    }
-
     const dispatch = createEventDispatcher();
 
     function signIn() {
         console.log("Signing In");
         dispatch("signIn");
+    }
 
+    const handleSubmit = (event) => {
+        if (password === confirmPassword) {
+            console.log("Signing Up");
+        } else {
+            console.log("Passwords do not match");
+        }
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        dispatch("submit", data)
     }
 </script>
 
 <div class="sign-up">
     <h1>Sign Up For Website</h1>
-    <form action="" on:submit={signUp}>
+    <form method="POST" on:submit|preventDefault>
         <label for="userName">Username <small>*</small></label>
         <input type="text" id="userName" name="userName" required bind:value={userName}>
         <label for="email">Email Address <small>*</small></label>
@@ -38,7 +42,7 @@
         <label for="nationality">Nationality</label>
         <input type="nationality" id="nationality" name="nationality" not required bind:value={nationality}> 
         <div class="button-container">
-            <button type="submit" on:click={ signUp }>Sign Up</button>
+            <button type="submit">Sign Up</button>
             <button type="button" class="sign-in-button" on:click={ signIn }>Sign In</button>
         </div>
     </form>
