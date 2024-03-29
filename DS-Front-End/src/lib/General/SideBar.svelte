@@ -17,7 +17,6 @@
         flex-direction: column;
         gap: 1.5em;
         padding: 1em;
-        flex: 1;
         margin-left: 50px;
         border-radius: 1em;
         background-color: #1A1A1A;

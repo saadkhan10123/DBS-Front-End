@@ -18,9 +18,7 @@
     export let form;
 </script>
  
-<header>
-    <Header />
-</header>
+
 
 <main>
     {#if signingIn}
@@ -34,19 +32,5 @@
     :global(body) {
         display: flex;
         flex-direction: column;
-    }
-
-    header {
-        background-color: #4e7f7d;
-        color: white;
-        height: 4em;
-    }
-
-    main {
-        box-sizing: border-box;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
     }
 </style>

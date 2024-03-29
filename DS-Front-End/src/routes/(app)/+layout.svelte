@@ -13,24 +13,25 @@
     <div class="slot">
         <slot></slot>
     </div>
-    <SideBar />
+    <div class="side-bar">
+        <SideBar />
+    </div>
 </main>
 <footer>
 
 </footer>
 
 <style>
-    main {
-        display: flex;
-        padding: 24px 80px;
-        margin-top: 4.5em;
-    }
-
     .slot {
-        flex: 4;
         background-color: #1a1a1a;
         border-radius: 20px;
         padding: 20px;
+        grid-column: span 9;
+        margin-left: 40px;
     }
 
+    .side-bar {
+        grid-column: span 3;
+        margin-right: 40px;
+    }
 </style>

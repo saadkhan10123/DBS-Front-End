@@ -9,9 +9,9 @@
 
 <div class="gamePage">
     <h1>Game Title {post.title}</h1>
-    <main>
+    <div class="post-body">
         {post.body}
-    </main>
+    </div>
     <LeaderBoard />
     <a href="/games">Back to games</a>
 </div>
