@@ -1,6 +1,8 @@
 <script>
     import Game from "./Game.svelte";
 
+    // Data for game leaderboard
+
     let gameList = [
         {
             id: 1,
@@ -40,6 +42,8 @@
     ]
     let rank = 1
     
+  
+    // Temporary rank assigning
     const appendRank = (game) => {
         game.rank = rank
         rank++
