@@ -30,10 +30,12 @@
 </header>
 
 <main>
-    <div class="user-options">
+    <div class="options-bar">
         <OptionsBar { options } { active }/>
-        <slot></slot>
     </div>
+        <div class="slot">
+            <slot></slot>
+        </div>
 </main>
 
 <footer>
@@ -41,15 +43,13 @@
 </footer>
 
 <style>
-    main {
-        display: flex;
-        flex-direction: column;
-        flex: 1;
-        margin-top: 4em;
-    }
-
-    .user-options {
+    .options-bar {
         display: flex;
         height: 100%;
+        grid-column: span 3;
+    }
+
+    .slot {
+        grid-column: span 9;
     }
 </style>

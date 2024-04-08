@@ -1,22 +1,38 @@
 <script>
     /** @type {import('./$types').LayoutData} */
     import '@fontsource/Silkscreen'
+    import Header from "$lib/Header/Header.svelte";
+
+    export let data;
+
+    let signedIn = false;
+
+    if (data.user) {
+        signedIn = true;
+    } else {
+        signedIn = false;
+    }
 </script>
 
-  
+<header>
+  <Header {signedIn}/>
+</header>
+
+<div class="page-body">
   <slot></slot>
+</div>
   
-  <style>
-    :global(body) {
-        margin: 0;
-        font-family: 'Silkscreen', sans-serif;
-        height: 100svh;
-        background-color: #121212;
-        display: flex;
-        flex-direction: column;
-        color: white;
-    }
-  
+<style>
+  :global(body) {
+      margin: 0;
+      font-family: 'Silkscreen', sans-serif;
+      height: 100svh;
+      background-color: #121212;
+      display: flex;
+      flex-direction: column;
+      color: white;
+  }
+
   /* Removed font face rules as they are not needed for this pixelated font */
 
   :global(button) {
@@ -37,4 +53,21 @@
   :global(a) {
     text-decoration: none;
   }
-  </style>
+
+  .page-body {
+    box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+  }
+
+  :global(main) {
+    padding-top: 4em;
+    min-height: 100svh;
+    width: 100svw;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+</style>

@@ -39,12 +39,9 @@
 
 <style>
     .profile-wrapper {
-        flex: 10;
         padding: 24px 64px;
         align-items: center;
         justify-content: center;
-        height: 100px;
-        width: 400px;
     }
 
     .profile-section {

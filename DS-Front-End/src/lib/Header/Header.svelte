@@ -1,7 +1,7 @@
 <script>
     import NavBar from "./Nav/NavBar.svelte";
     import HeaderAccount from "./HeaderAccount.svelte";
-    let signedIn = true;
+    export let signedIn;
 </script>
 
 <div class="header">
