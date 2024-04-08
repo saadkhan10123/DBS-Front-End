@@ -3,10 +3,20 @@
     //export let data;
     import Header from "$lib/Header/Header.svelte";
     import SideBar from "$lib/General/SideBar.svelte";
+
+    export let data;
+
+    let signedIn = false;
+
+    if (data.user) {
+        signedIn = true;
+    } else {
+        signedIn = false;
+    }
 </script>
 
 <header>
-    <Header/>
+    <Header {signedIn}/>
 </header>
 
 <main>
@@ -33,5 +43,9 @@
     .side-bar {
         grid-column: span 3;
         margin-right: 40px;
+    }
+
+    main {
+        margin-top: 2em;
     }
 </style>

@@ -2,10 +2,20 @@
     /** @type {import('./$types').LayoutData} */
     import '@fontsource/Silkscreen'
     import Header from "$lib/Header/Header.svelte";
+
+    export let data;
+
+    let signedIn = false;
+
+    if (data.user) {
+        signedIn = true;
+    } else {
+        signedIn = false;
+    }
 </script>
 
 <header>
-  <Header />
+  <Header {signedIn}/>
 </header>
 
 <div class="page-body">
@@ -53,7 +63,7 @@
   }
 
   :global(main) {
-    padding-top: 6em;
+    padding-top: 4em;
     min-height: 100svh;
     width: 100svw;
     box-sizing: border-box;

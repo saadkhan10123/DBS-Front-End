@@ -3,7 +3,7 @@
 
     import LeaderBoard from '$lib/Games/LeaderBoard.svelte';
 
-    console.log(data);
+    // console.log(data);
     let post = data.post
 </script>
 

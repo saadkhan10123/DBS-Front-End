@@ -1,7 +1,7 @@
 <script>
     /** @type {import('./$types').Game} */
     export let game;
-    console.log(game);
+    // console.log(game);
 </script>
 
 <!-- Card for a single game -->
@@ -23,9 +23,7 @@
     .game-card {
         border-radius: 1em;
         overflow: hidden;
-<<<<<<< HEAD
         transition: all 0.3s;
-=======
         cursor: pointer;
         transition: scale 0.2s ease-in-out;
     }
@@ -33,7 +31,6 @@
     .game-card > a {
         text-decoration: none;
         color: white;
->>>>>>> 146a842838af86f2955abb7c2844b6eadc62f8bd
     }
 
     .game-card:hover {

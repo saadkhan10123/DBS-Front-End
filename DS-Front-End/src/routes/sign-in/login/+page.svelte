@@ -1,23 +1,41 @@
 <script>
     /** @type {import('./$types').PageData} */
     import { goto } from "$app/navigation"
+    import { enhance, applyAction  } from '$app/forms';
     
 	/** @type {import('./$types').PageData} */
 	//export let data;
 
 	/** @type {import('./$types').ActionData} */
-	//export let form;
+	export let form;
 
-    //console.log(form);
+    let password;
 </script>
 
 <div class="sign-in">
     <h1>Sign In</h1>
-    <form method="POST" action="/sign-in?/login" on:submit>
+    <form method="POST" action="/sign-in?/login" use:enhance={({ submitter }) => {
+        password = ''
+        submitter.disabled = true;
+        return async( { result } ) => {
+            console.log(result);
+            if (result.type === "success") {
+                goto("/home");
+            } else {
+                await applyAction(result);
+                submitter.disabled = false;
+            }
+        }}
+    }>
         <label for="email">Email</label>
         <input type="email" id="email" name="email" required>
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" required>
+        <input type="password" id="password" name="password" required bind:value={password}>
+        <div class="error">
+            {#if form?.message}
+                {form.message}
+            {/if}
+        </div>
         <div class="button-container">
             <button type="submit">Sign In</button>
             <button type="button" class="sign-up-button" on:click={() => goto("/sign-in/signup")}>Sign Up</button>
@@ -85,6 +103,11 @@
         transition: all 0.2s ease-in-out;
     }
 
+    button:disabled {
+        background-color: #ff6961;
+        cursor: not-allowed;
+    }
+
     .sign-up-button {
         background-color: #121212;
     }
@@ -93,5 +116,11 @@
     button:focus {
         background-color: #ff6961;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .error {
+        color: #ff6961;
+        font-size: 12px;
+        margin-top: 8px;
     }
 </style>

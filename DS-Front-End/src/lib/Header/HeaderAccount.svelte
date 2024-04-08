@@ -14,8 +14,8 @@
         </a>
     {:else}
         <div class="signin-options">
-            <button class="sign-in"><a href="/sign-in">Sign In</a></button>
-            <button class="sign-up"><a href="/sign-in">Sign Up</a></button>
+            <button class="sign-in"><a href="/sign-in/login">Sign In</a></button>
+            <button class="sign-up"><a href="/sign-in/signup">Sign Up</a></button>
         </div>
     {/if}
 </div>
