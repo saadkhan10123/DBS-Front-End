@@ -13,10 +13,9 @@
                 <h1>{data.title.substring(0, 10)}</h1> 
             </div>
             <div class="stats">
-                <p>Game</p>
-                <p>Score</p>
-                <p>Rank</p>
-                <p>Nationality</p>
+                <p>Game: </p>
+                <p>Score: </p>
+                <p>Rank: </p>
             </div>
         </div>
     </a>
@@ -35,7 +34,6 @@
     }
 
     a > div {
-        height: 256px;
         width: 100%;
         color: white;
         padding: 1em;

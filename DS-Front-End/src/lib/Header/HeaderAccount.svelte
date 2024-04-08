@@ -14,8 +14,8 @@
         </a>
     {:else}
         <div class="signin-options">
-            <button class="sign-in"><a href="/sign-in/login">Sign In</a></button>
-            <button class="sign-up"><a href="/sign-in/signup">Sign Up</a></button>
+            <button class="sign-in"><a href="/sign-in/login">Log In</a></button>
+            <button class="sign-up"><a href="/sign-in/signup" style="color: #f74d40;">Sign Up</a></button>
         </div>
     {/if}
 </div>
@@ -62,33 +62,29 @@ a:visited {
 }
 
 button {
-    margin: 0px 5px;
-    border-radius: 5px;
-    transition: all 0.3s;
-    cursor: pointer;
-    padding: 0.5em 1.2em; 
-    text-align: center;
-    box-sizing: border-box;
+    padding: 12px 32px;
+    margin: 0 6px;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
     font-size: 1em;
-    }
+}
 
 .sign-in {
-    background-color: rgba(75, 75, 75, 0.2); 
-    color: white; 
+    background-color: #f74d40;
 }
 
 .sign-in:hover {
-    background-color: rgba(75, 75, 75, 0.4); 
+    background-color: #ff6961;
 }
 
 .sign-up {
     background-color: white;
-    color: #4e7f7d;
 }
 
 .sign-up:hover {
-    background-color: rgb(216, 216, 216);
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 </style>

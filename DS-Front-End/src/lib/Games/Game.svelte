@@ -12,10 +12,8 @@
 
 <style>
     .game-entry {
-<<<<<<< HEAD
         margin-bottom: 24px;
         border: 1px solid #ff6961;
-=======
         background-color: #222222;
         padding: 1em;
         border-radius: 1em;

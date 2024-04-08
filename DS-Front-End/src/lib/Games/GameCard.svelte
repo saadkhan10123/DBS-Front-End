@@ -23,9 +23,7 @@
     .game-card {
         border-radius: 1em;
         overflow: hidden;
-<<<<<<< HEAD
         transition: all 0.3s;
-=======
         cursor: pointer;
         transition: scale 0.2s ease-in-out;
     }

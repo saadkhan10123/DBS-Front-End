@@ -17,6 +17,6 @@
 		gap: 2em;
         flex-direction: column;
         padding: 10px 10px;
-        border-radius: 5px;
+        border-radius: 1em;
 	}
 </style>

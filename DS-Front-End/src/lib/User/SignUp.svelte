@@ -40,7 +40,7 @@
         <label for="confirmPassword">Confirm Password <small>*</small></label>
         <input type="password" id="confirmPassword" name="confirmPassword" required bind:value={confirmPassword}>
         <label for="nationality">Nationality</label>
-        <input type="nationality" id="nationality" name="nationality" not required bind:value={nationality}> 
+        <input type="nationality" id="nationality" name="nationality" not required bind:value={nationality}>
         <div class="button-container">
             <button type="submit">Sign Up</button>
             <button type="button" class="sign-in-button" on:click={ signIn }>Sign In</button>
@@ -121,4 +121,5 @@
         background-color: #ff6961;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
+
 </style>
