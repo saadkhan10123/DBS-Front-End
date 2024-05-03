@@ -2,8 +2,9 @@
 	import GameGrid from "$lib/General/GameGrid.svelte";
 
 	export let data;
-	console.log(data.actor);
-	console.log(data)
+
+	const session_start = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    const session_expire = new Date(new Date().getTime() + 60 * 60000).toISOString().slice(0, 19).replace('T', ' ');
 </script>
 
 <div class="main-screen">

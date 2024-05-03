@@ -3,16 +3,9 @@
     import ChangePassword from "$lib/User/ChangePassword.svelte";
 
     /** @type {import('./$types').PageData} */
-    // export let data;
-    // Insert country flag in nationality
+    export let data;
 
-    let data = {
-        userName: "John Doe",
-        email: "jdoe@gmail.com",
-        password: "password",
-        nationality: "Pakistan ",
-        profilePic: "/placeHolderPFP.png"
-    }
+    const user = data.user
 
     let changingPassword = false
 </script>
@@ -21,12 +14,12 @@
 <div class="profile-wrapper">
     <div class="profile-section">
         <div class="profile-pic">
-            <img src={data.profilePic} alt="Profile">
+            <img src="/placeHolderPFP.png" alt="Profile">
         </div>
         <div class="profile-info">
-            <h2>{data.userName} </h2>
-            <p>Email ID: {data.email}</p>
-            <p>Nationality: {data.nationality}</p>
+            <h2>{user.username} </h2>
+            <p>Email ID: {user.email}</p>
+            <p>Nationality: {user.country}</p>
             <button class="change-password" on:click={() => changingPassword = true}>Change Password</button>
             {#if changingPassword}
                 <Modal on:disableModal = {() => changingPassword = false}>

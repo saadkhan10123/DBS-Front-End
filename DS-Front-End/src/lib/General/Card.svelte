@@ -5,40 +5,31 @@
 <div class="card">
     <a href="/games/{data.id}">
         <div class="info-container">
-            <div class="user-info">
-                <div class="profile-img-container">
-                    <img class="profile-img" src="/placeHolderPFP.png" alt="">
-                    <img class="flag" src="/pakistan.png" alt="">
-                </div>
-                <h1>{data.title.substring(0, 10)}</h1> 
+            <div class="game-img">
+                <img src="game-pic.png" alt="The game">            
             </div>
-            <div class="stats">
-                <p>Game: </p>
-                <p>Score: </p>
-                <p>Rank: </p>
+            <div class="highscore-info">
+                <div>
+                    <p class="rank">1st</p>
+                    <p class="score">1000</p>
+                </div>
+                <div>
+                    <p>{data.title.substring(0, 5)}</p>
+                    <p>{data.body.substring(0, 5)}</p>
+                </div>
             </div>
         </div>
     </a>
 </div>
 
 <style>
-    h1 {
-        color: white;
-        font-size: 1.125em;
-        margin: 0 1rem;
-    }
-
-    .user-info {
-        display: flex;
-        align-items: center;
-    }
-
     a > div {
         width: 100%;
         color: white;
         padding: 1em;
         text-decoration: none;
         box-sizing: border-box;
+        display: flex;
     }
 
     .card {
@@ -53,34 +44,36 @@
         scale: 1.025;
     }
 
-    .profile-img {
-        border-radius: 50%;
-        height: 4em;
-        aspect-ratio: 1 / 1;
+    img {
+        height: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
     }
 
-    .flag {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        height: 1.1em;
-        aspect-ratio: 4 / 3;
-        border-radius: 0.2rem;
+    .info-container {
+        height: 200px;
     }
 
-    .profile-img-container {
-        position: relative;
+    .highscore-info {
+        display: flex;
+        flex: 1;
+        justify-content: right;
     }
 
-    .stats {
+    .highscore-info > div {
         display: flex;
         flex-direction: column;
-        padding-top: 24px;
-        justify-content: space-between;
-        gap: 0.5em;
+        padding: 1em 2em;
+        justify-content: center;
+        width: 35%;
     }
 
-    .stats > p {
+    .highscore-info > div > p {
         margin: 0;
+        font-size: 1.65em;
+    }
+
+    .rank {
+        font-weight: bold;
     }
 </style>

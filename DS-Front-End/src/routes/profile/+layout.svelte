@@ -2,6 +2,9 @@
     /** @type {import('./$types').LayoutData} */
     import Header from "$lib/Header/Header.svelte";
     import OptionsBar from "$lib/User/OptionsBar.svelte";
+    export let data;
+
+    let user = data.user
 
     let options = [
         {
@@ -14,7 +17,7 @@
         },
         {
             name: "My Highscores",
-            link: `/highscores`
+            link: `/profile/highscores`
         },
         {
             name: "Logout",
@@ -23,15 +26,19 @@
     ]
 
     let active = "Profile"
+
+    const handleOptionClicked = (e) => {
+        active = e.detail;
+    }
 </script>
 
 <header>
-    <Header/>
+    <Header {user}/>
 </header>
 
 <main>
     <div class="options-bar">
-        <OptionsBar { options } { active }/>
+        <OptionsBar { options } { active } on:option-clicked={handleOptionClicked}/>
     </div>
         <div class="slot">
             <slot></slot>

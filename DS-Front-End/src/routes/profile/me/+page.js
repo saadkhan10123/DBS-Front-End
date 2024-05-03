@@ -1,8 +1,6 @@
-/** @type {import('./$types').LayoutLoad} */
-// import Cookies from 'js-cookie';
-
+/** @type {import('./$types').PageLoad} */
 export async function load({ data }) {
     return {
         user: data.user
     };
-}
+};

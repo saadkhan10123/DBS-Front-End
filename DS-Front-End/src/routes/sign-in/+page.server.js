@@ -1,57 +1,51 @@
 import { redirect } from '@sveltejs/kit';
 import { fail } from '@sveltejs/kit';
+import mysql from 'mysql2'; 
+import dotenv from 'dotenv'; 
+dotenv.config(); 
 
-let users = [
-    {
-        name: "John Doe",
-        email: "jdoe@gmail.com",
-        password: "password",
-        country: "US",
-        admin: true
-    },
-    {
-        name: "Jane Doe",
-        email: "jadoe@gmail.com",
-        password: "password",
-        country: "US",
-        admin: false
-    },
-    {
-        name: "John Smith",
-        email: "jsmith@gmai.com",
-        password: "password",
-        country: "UK",
-        admin: false
-    },
-]
+// Creating a connection pool to the MySQL database using environment variables
+const pool = mysql.createPool({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER, 
+    password: process.env.DB_PASSWORD, 
+    database: process.env.DB_NAME,
+}).promise(); 
+
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
-    throw new redirect("/sign-in/login")
+    redirect(302, "/sign-in/login")
     return {};
 };
 
 /** @type {import('./$types').Actions} */
 export const actions = {
     login: async ({ request, cookies }) => {
-        console.log("Hello server!")
         let data = await request.formData()
 
         let email = data.get("email")
         let password = data.get("password")
 
-        let user = users.find(u => u.email === email && u.password === password)
-        console.log(email, password)
+        let user = await pool.query("SELECT * FROM user WHERE email = ? AND password = ?", [email, password])
+        // console.log(user)
 
-        if (!user) {
-            console.log("User not found")
+        if (user[0].length === 0) {
+            // console.log("User not found")
             return fail(400, { message: "Invalid Username or Password"})
         }
 
         else {
-            console.log("User found")
-
             const sessionToken = Math.random().toString(36).substring(2)
+
+            const query = `INSERT INTO user_session (session_id, user_id, session_start, session_end)
+                           VALUES (?, ?, ?, ?)`
+
+            const session_start = new Date().toISOString().slice(0, 19).replace('T', ' ');
+            const session_expire = new Date(new Date().getTime() + 60 * 60000).toISOString().slice(0, 19).replace('T', ' ');
+
+            await pool.query(query, [sessionToken, user[0][0].user_id, session_start, session_expire])
+
             cookies.set('session_id', sessionToken, {
                 path: '/',
                 httpOnly: true,
@@ -62,23 +56,19 @@ export const actions = {
             return {
                 status: 200,
                 type: 'success',
-                sessionToken,
             }
         }
         
     },
-    signup: async ({ request }) => {
-        console.log("Hello server!")
+    signup: async ({ request, cookies }) => {
         let data = await request.formData()
 
         console.log(data)
 
+        let username = data.get("username")
         let email = data.get("email")
 
-        if (email !== "lmao@gmail.com") {
-            console.log("Email not found")
-            return fail(400, {email, message: "Email not found"})
-        }
+        
 
         return {
             status: 200,

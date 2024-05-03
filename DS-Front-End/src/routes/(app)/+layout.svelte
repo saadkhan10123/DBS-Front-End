@@ -6,17 +6,11 @@
 
     export let data;
 
-    let signedIn = false;
-
-    if (data.user) {
-        signedIn = true;
-    } else {
-        signedIn = false;
-    }
+    let user = data.user
 </script>
 
 <header>
-    <Header {signedIn}/>
+    <Header {user}/>
 </header>
 
 <main>

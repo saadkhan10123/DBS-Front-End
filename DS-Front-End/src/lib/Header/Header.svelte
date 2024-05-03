@@ -1,7 +1,7 @@
 <script>
     import NavBar from "./Nav/NavBar.svelte";
     import HeaderAccount from "./HeaderAccount.svelte";
-    export let signedIn;
+    export let user;
 </script>
 
 <div class="header">
@@ -12,7 +12,7 @@
         <NavBar />
     </div>
     <div class="signIn">
-        <HeaderAccount {signedIn} />
+        <HeaderAccount {user} />
     </div>
 </div>
 

@@ -9,7 +9,7 @@
 <div class="game-card">
     <a href={`games/${game.id}`}>
         <div class="img-container">
-            <img src="game-pic.png" alt="Game Image">            
+            <img src="game-pic.png" alt="The game">            
             <div class="game-data">
                 <h2>{game.title.substring(0, 5)}</h2>
                 <p>{game.body.substring(0, 5)}</p>

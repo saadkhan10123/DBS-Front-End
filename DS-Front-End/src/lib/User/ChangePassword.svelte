@@ -1,17 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte"
-
-    let oldPassword = document.getElementById("oldPassword");
-    let newPassword = document.getElementById("newPassword");
-    let confirmNewPassword = document.getElementById("confirmNewPassword");
-
-    function changePassword() {
-        if (newPassword.value === confirmNewPassword.value) {
-            console.log("Password Changed");
-        } else {
-            console.log("Passwords do not match");
-        }
-    }
+    import { enhance, applyAction } from '$app/forms';
 
     const dispatch = createEventDispatcher();
 
@@ -19,20 +8,45 @@
         console.log("Modal Disabled");
         dispatch("disableModal");
     }
+
+	/** @type {import('./$types').ActionData} */
+	export let form;
+
+    let error = null;
 </script>
 
 <div class="change-password">
     <h1>Change Password</h1>
-    <form action="" on:submit={changePassword}>
+    <form method="POST" action="?/changePassword" use:enhance={({ submitter, formData }) => {
+            submitter.disabled = true;
+            if (formData.newPassword !== formData.confirmPassword) {
+                error = "Passwords do not match";
+                return;
+            }
+            return async ({ result }) => {
+                if (result.type === "success") {
+                    disableModal();
+                } else {
+                    console.log(result);
+                    error = result.data.message;
+                    console.log(error)
+                    submitter.disabled = false;
+                }
+            }
+        }
+    }>
         <label for="oldPassword">Old Password</label>
-        <input type="password" id="oldPassword" name="oldPassword" required>
+        <input type="password" name="oldPassword" required>
         
         <label for="newPassword">New Password</label>
-        <input type="password" id="newPassword" name="newPassword" required>
+        <input type="password" name="newPassword" required>
         
         <label for="confirmNewPassword">Confirm Password</label>
-        <input type="password" id="confirmNewPassword" name="confirmNewPassword" required>
+        <input type="password" name="confirmPassword" required>
         
+        {#if error}
+            <div class="error">{error}</div>
+        {/if}
         <div class="button-container">
             <button type="submit">Change Password</button>
             <button type="button" on:click={disableModal}>Cancel</button>
@@ -107,5 +121,11 @@ button:hover,
 button:focus {
     background-color: #ff6961;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.error {
+    color: #ff6961;
+    font-size: 12px;
+    margin-top: 8px;
 }
 </style>

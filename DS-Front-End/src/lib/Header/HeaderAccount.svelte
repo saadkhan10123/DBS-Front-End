@@ -1,15 +1,13 @@
 <script>
-    export let signedIn = true;
-    
-    let name = "John Doe"
+    export let user;
 </script>
 
 <div class="signin-status">
-    {#if signedIn}
+    {#if user}
         <a href="/profile/me">
             <div class="nav-profile">
                 <img src="/placeHolderPFP.png" alt="Profile">
-                <p>{name}</p>
+                <p>{user.username}</p>
             </div>
         </a>
     {:else}
@@ -32,7 +30,8 @@
     align-items: center;
     justify-content: center;
     gap: 1em;
-    padding: 5px 0px;
+    box-sizing: border-box;
+    max-height: 100%;
 }
 
 .nav-profile img {
@@ -55,6 +54,11 @@
 a {
     text-decoration: none;
     color: white;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    padding: 12px 32px;
+    box-sizing: border-box;
 }
 
 a:visited {
@@ -62,7 +66,7 @@ a:visited {
 }
 
 button {
-    padding: 12px 32px;
+    padding: 0;
     margin: 0 6px;
     border: none;
     border-radius: 5px;

@@ -1,7 +1,7 @@
 <script>
     /** @type {import('./$types').PageData} */
     import { goto } from "$app/navigation"
-    import { enhance, applyAction  } from '$app/forms';
+    import { enhance, applyAction } from '$app/forms';
     
 	/** @type {import('./$types').PageData} */
 	//export let data;
