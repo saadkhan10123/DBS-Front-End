@@ -19,7 +19,7 @@
         <div class="profile-info">
             <h2>{user.username} </h2>
             <p>Email ID: {user.email}</p>
-            <p>Nationality: {user.country}</p>
+            <p>Nationality: {user.nationality}</p>
             <button class="change-password" on:click={() => changingPassword = true}>Change Password</button>
             {#if changingPassword}
                 <Modal on:disableModal = {() => changingPassword = false}>

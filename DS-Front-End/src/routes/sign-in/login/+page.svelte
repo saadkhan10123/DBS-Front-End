@@ -20,6 +20,7 @@
         return async( { result } ) => {
             console.log(result);
             if (result.type === "success") {
+                console.log("success");
                 goto("/home");
             } else {
                 await applyAction(result);

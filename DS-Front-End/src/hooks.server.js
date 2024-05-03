@@ -8,7 +8,7 @@ export async function handle ({ event, resolve }) {
 
     if (event.url.pathname.startsWith("/profile")) {
         const cookies = await event.cookies.get("session_id")
-        const user = getUser(cookies)
+        const user = await getUser(cookies)
         try {
             if (!user.username) {
                 console.log("No user")
