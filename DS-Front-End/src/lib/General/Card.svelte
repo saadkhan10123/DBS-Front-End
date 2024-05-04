@@ -10,12 +10,12 @@
             </div>
             <div class="highscore-info">
                 <div>
-                    <p class="rank">1st</p>
-                    <p class="score">1000</p>
+                    <p class="rank">Rank: 1st</p>
+                    <p class="score">Score: 1000</p>
                 </div>
                 <div>
-                    <p>{data.title.substring(0, 5)}</p>
-                    <p>{data.body.substring(0, 5)}</p>
+                    <p>Name: {data.title.substring(0, 5)}</p>
+                    <p>Nationality: {data.body.substring(0, 5)}</p>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
     .highscore-info {
         display: flex;
         flex: 1;
-        justify-content: right;
+        justify-content: left;
     }
 
     .highscore-info > div {
