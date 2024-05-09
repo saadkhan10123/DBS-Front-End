@@ -18,6 +18,12 @@ export async function handle ({ event, resolve }) {
             console.log(error)
             redirect(302, "/sign-in/login")
         }
+        if (event.url.pathname.startsWith('/profile/admin')) {
+            const isAdmin = await user.isAdmin(userInfo.user_id)
+            if (!isAdmin) {
+                return redirect(302, "/profile")
+            }
+        }
     }
     return response
 }

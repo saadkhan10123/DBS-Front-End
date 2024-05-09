@@ -7,8 +7,6 @@
     export let data;
 
     let user = data.user
-
-    console.log(user)
 </script>
 
 <header>

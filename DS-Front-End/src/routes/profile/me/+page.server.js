@@ -24,7 +24,6 @@ export const actions = {
             return fail(400, { message: "Passwords do not match"})
         }
 
-        console.log(user)
         const userInfo = await user.getUser(cookies.get('session_id'));
 
         if (userInfo.password !== oldPassword) {

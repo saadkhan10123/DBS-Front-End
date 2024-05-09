@@ -2,9 +2,11 @@
     /** @type {import('./$types').LayoutData} */
     import Header from "$lib/Header/Header.svelte";
     import OptionsBar from "$lib/User/OptionsBar.svelte";
+    import { page } from "$app/stores";
+
     export let data;
 
-    let user = data.user
+    let user = data.userInfo
 
     let options = [
         {
@@ -12,24 +14,37 @@
             link: "/profile/me"
         },
         {
-            name: "Settings",
-            link: "/settings"
-        },
-        {
             name: "My Highscores",
             link: `/profile/highscores`
-        },
-        {
-            name: "Logout",
-            link: "/profile/logout"
         }
+
     ]
 
     let active = "Profile"
 
-    const handleOptionClicked = (e) => {
-        active = e.detail;
+    if(data.isAdmin) {
+        options.push({
+            name: "Admin",
+            link: "/profile/admin"
+        })
+    
     }
+
+    options.push({
+        name: "Logout",
+        link: "/profile/logout"
+    })
+
+    page.subscribe(value => {
+        const route = value.route.id;
+        const routeName = route.split("/")[2];
+        active = routeName.charAt(0).toUpperCase() + routeName.slice(1);
+        if(active === "Me") {
+            active = "Profile"
+        } else if (active === "Highscores") {
+            active = "My Highscores"
+        }
+    })
 </script>
 
 <header>
@@ -38,7 +53,7 @@
 
 <main>
     <div class="options-bar">
-        <OptionsBar { options } { active } on:option-clicked={handleOptionClicked}/>
+        <OptionsBar { options } { active }/>
     </div>
         <div class="slot">
             <slot></slot>

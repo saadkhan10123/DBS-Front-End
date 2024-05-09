@@ -11,5 +11,7 @@ export async function useQuery(query, params) {
     }).promise();
 
     const result = await connection.query(query, params);
+
+    connection.end();
     return result[0];
 }

@@ -3,8 +3,6 @@ import user from '$lib/User/user.js';
 
 export async function load({ cookies }) {
     const userInfo = await user.getUser(cookies.get('session_id'));
-
-    console.log(userInfo);
     return {
         userInfo
     };
