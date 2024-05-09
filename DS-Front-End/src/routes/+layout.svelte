@@ -7,7 +7,6 @@
 
   let user = data.user
 
-  // console.log(user)
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">

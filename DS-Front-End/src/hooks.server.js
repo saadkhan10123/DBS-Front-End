@@ -1,6 +1,6 @@
 // This hook will run authentication on user
 import { handle, redirect } from "@sveltejs/kit"
-import { getUser } from "$lib/User/getUser"
+import user from "$lib/User/user"
 
 export async function handle ({ event, resolve }) {
 
@@ -8,15 +8,21 @@ export async function handle ({ event, resolve }) {
 
     if (event.url.pathname.startsWith("/profile")) {
         const cookies = await event.cookies.get("session_id")
-        const user = await getUser(cookies)
+        const userInfo = await user.getUser(cookies)
         try {
-            if (!user.username) {
+            if (!userInfo.username) {
                 console.log("No user")
                 return redirect(302, "/sign-in/login")
             }
         } catch (error) {
             console.log(error)
             redirect(302, "/sign-in/login")
+        }
+        if (event.url.pathname.startsWith('/profile/admin')) {
+            const isAdmin = await user.isAdmin(userInfo.user_id)
+            if (!isAdmin) {
+                return redirect(302, "/profile")
+            }
         }
     }
     return response

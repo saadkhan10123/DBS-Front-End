@@ -1,19 +1,11 @@
 <script>
     export let options;
-    export let active;
-
-    import { createEventDispatcher } from "svelte";
-
-    const dispatch = createEventDispatcher();
-    
-    const handleClick = (e) => {
-        dispatch("option-clicked", e.target.innerText);
-    }
+    export let active;    
 </script>
 
 <div class="options-bar">
     {#each options as option}
-        <a class:active = {active === option.name} class="option" href={option.link} on:click={handleClick}>{option.name}</a>
+        <a class:active = {active === option.name} class="option" href={option.link}>{option.name}</a>
     {/each}
 </div>
 

@@ -5,7 +5,7 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
-    const user = data.user
+    const user = data.userInfo
 
     let changingPassword = false
 </script>
