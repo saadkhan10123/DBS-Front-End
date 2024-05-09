@@ -3,7 +3,7 @@
 </script>
 
 <div class="side-bar">
-    <h3>New Games</h3>
+    <h3>Latest Games</h3>
     <div class="side-item">Game 1</div>
     <div class="side-item">Game 2</div>
     <div class="side-item">Game 3</div>

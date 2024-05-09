@@ -15,6 +15,8 @@
             {post.body}
         </div>
     </div>
+</div>
+<div class="gamePage">
     <LeaderBoard />
     <a href="/games">Back to games</a>
 </div>
