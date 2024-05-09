@@ -1,11 +1,11 @@
 /** @type {import('./$types').LayoutServerLoad} */
-import { getUser } from '$lib/User/getUser.js';
+import user from '$lib/User/user.js';
 
 export async function load({ cookies }) {
-    const session = await console.log(cookies.get('session_id'));
-    console.log(session);
-    const user = await getUser(cookies.get('session_id'));
+    const userInfo = await user.getUser(cookies.get('session_id'));
+
+    console.log(userInfo);
     return {
-        user
+        userInfo
     };
 }

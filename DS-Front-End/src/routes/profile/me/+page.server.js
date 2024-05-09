@@ -1,14 +1,14 @@
 /** @type {import('./$types').PageServerLoad} */
-import { getUser } from '$lib/User/getUser';
+import user from '$lib/User/user.js';
 import { fail } from '@sveltejs/kit';
 import mysql from "mysql2"
 import dotenv from 'dotenv';
 dotenv.config();
 
 export async function load({ cookies }) {
-    const user = await getUser(cookies.get('session_id'));
+    const userInfo = await user.getUser(cookies.get('session_id'));
     return {
-        user
+        userInfo
     };
 };
 
@@ -24,9 +24,10 @@ export const actions = {
             return fail(400, { message: "Passwords do not match"})
         }
 
-        const user = await getUser(cookies.get('session_id'));
+        console.log(user)
+        const userInfo = await user.getUser(cookies.get('session_id'));
 
-        if (user.password !== oldPassword) {
+        if (userInfo.password !== oldPassword) {
             return fail(400, { message: "Incorrect Password"})
         }
 
@@ -37,7 +38,7 @@ export const actions = {
             database: process.env.DB_NAME
         }).promise();
 
-        await connection.query("UPDATE users SET password = ? WHERE user_id = ?", [newPassword, user.user_id])
+        await connection.query("UPDATE users SET password = ? WHERE user_id = ?", [newPassword, userInfo.user_id])
 
         return {
             status: 200,

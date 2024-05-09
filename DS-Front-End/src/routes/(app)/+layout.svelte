@@ -8,7 +8,7 @@
 
     let user = data.user
 
-    // console.log(user)
+    console.log(user)
 </script>
 
 <header>

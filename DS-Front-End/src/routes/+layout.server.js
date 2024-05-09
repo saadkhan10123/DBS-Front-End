@@ -1,9 +1,10 @@
 /** @type {import('./$types').LayoutServerLoad} */
-import { getUser } from '$lib/User/getUser.js';
+import user from '$lib/User/user.js';
+import { sequence } from '@sveltejs/kit/hooks';
 
 export async function load({ cookies }) {
-    const user = await getUser(cookies.get('session_id'));
+    const userInfo = await user.getUser(cookies.get('session_id'));
     return {
-        user
+        userInfo
     };
 }
