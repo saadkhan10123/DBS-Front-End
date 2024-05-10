@@ -16,13 +16,16 @@
         </div>
     </div>
 </div>
-<div class="gamePage">
+<div class="leaderboard">
     <LeaderBoard />
-    <a href="/games">Back to games</a>
+    <button>
+        <a href="/games">Back to Games</a>
+    </button>
+
 </div>
 
 <style>
-    .gamePage {
+    .gamePage, .leaderboard {
         padding: 24px 64px;
     }
 
@@ -30,7 +33,20 @@
         margin-bottom: 24px;
     }
 
-    a {
-        margin-top: 24px;
+    button {
+        background-color: #f74d40;
+        border-color: #f74d40;
+        margin-top: 32px;
+        transition: all 0.2s;
     }
+
+    button:hover {
+        background-color: #ff6961;
+    }
+
+    a {
+        color: white;
+    }
+
+
 </style>

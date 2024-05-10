@@ -64,41 +64,60 @@
 <div class="game-details">
     
 </div>
-
 <div class="leader-board">
     <h1>Leader Board</h1>
     <table>
         <thead>
-        <tr>
-            <th>Rank</th>
-            <th>Player Name</th>
-            <th>Score</th>
-        </tr>
+            <tr>
+                <th>Rank</th>
+                <th>Player Name</th>
+                <th>Score</th>
+            </tr>
         </thead>
         <tbody>
-        {#each gameList as game}
+            {#each gameList as game}
             <tr>
-            <td>{game.rank}</td>  <td>{game.playerName}</td> <td>{game.score}</td>
+                <td>{game.rank}</td>
+                <td>{game.playerName}</td>
+                <td>{game.score}</td>
             </tr>
-        {/each}
+            {/each}
         </tbody>
     </table>
 </div>
+
 
 <style>
     h1 {
         margin-bottom: 24px;
     }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        background-color: #222222;
+    .leader-board {
+    width: 100%;
     }
 
-    th, td {
-        padding: 10px;
-        border: 1px solid #ff6961;
+    .leader-board table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .leader-board th,
+    .leader-board td {
+        padding: 8px;
         text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .leader-board th {
+        background-color: #f74d40;
+        /* background-color: #ff6961; */
+    }
+
+    .leader-board tbody tr:nth-child(even) {
+        background-color: #2d2d2d;
+    }
+
+    .leader-board tbody tr:hover {
+        background-color: #3d3d3d;
     }
 </style>
