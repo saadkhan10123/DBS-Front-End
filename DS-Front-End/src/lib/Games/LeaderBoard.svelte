@@ -2,54 +2,52 @@
     import Game from "./Game.svelte";
 
     // Data for game leaderboard
-
     let gameList = [
         {
-            id: 1,
-            playerName: "Name 1",
-            score: 100
+        id: 1,
+        playerName: "Name 1",
+        score: 100
         },
         {
-            id: 2,
-            playerName: "Name 2",
-            score: 50
+        id: 2,
+        playerName: "Name 2",
+        score: 50
         },
         {
-            id: 3,
-            playerName: "Name 3",
-            score: 20
+        id: 3,
+        playerName: "Name 3",
+        score: 20
         },
         {
-            id: 4,
-            playerName: "Name 4",
-            score: 10
+        id: 4,
+        playerName: "Name 4",
+        score: 10
         },
         {
-            id: 5,
-            playerName: "Name 5",
-            score: 5
+        id: 5,
+        playerName: "Name 5",
+        score: 5
         },
         {
-            id: 6,
-            playerName: "Name 6",
-            score: 1
+        id: 6,
+        playerName: "Name 6",
+        score: 1
         },
         {
-            id: 7,
-            playerName: "Name 7",
-            score: 0
+        id: 7,
+        playerName: "Name 7",
+        score: 0
         }
-    ]
-    let rank = 1
-    
-  
-    // Temporary rank assigning
-    const appendRank = (game) => {
-        game.rank = rank
-        rank++
-    }
+    ];
 
-    gameList.forEach(appendRank)
+    let rank = 1;
+
+    const appendRank = (game) => {
+        game.rank = rank;
+        rank++;
+    };
+
+    gameList.forEach(appendRank);
 
     gameList[1].rank = 1
     gameList[2].rank = 2
@@ -60,41 +58,31 @@
     let thirdPosition = gameList.filter(game => game.rank === 3)
     let restOfTheList = gameList.filter(game => game.rank > 3)
 
-    
+    // No need for separate filtering and sorting anymore
 </script>
+    
+<div class="game-details">
+    
+</div>
 
 <div class="leader-board">
     <h1>Leader Board</h1>
-    <div class="game-list">
-        {#if firstPosition}
-            <div class="first-position">
-                {#each firstPosition as game}
-                    <Game game={game} />
-                {/each}
-            </div>
-        {/if}
-        {#if secondPosition}
-            <div class="second-position">
-                {#each secondPosition as game}
-                    <Game game={game} />
-                {/each}
-            </div>
-        {/if}
-        {#if thirdPosition}
-            <div class="third-position">
-                {#each thirdPosition as game}
-                    <Game game={game} />
-                {/each}
-            </div>
-        {/if}
-        {#if restOfTheList}
-            <div>
-                {#each restOfTheList as game}
-                    <Game game={game} />
-                {/each}
-            </div>
-        {/if}
-    </div>
+    <table>
+        <thead>
+        <tr>
+            <th>Rank</th>
+            <th>Player Name</th>
+            <th>Score</th>
+        </tr>
+        </thead>
+        <tbody>
+        {#each gameList as game}
+            <tr>
+            <td>{game.rank}</td>  <td>{game.playerName}</td> <td>{game.score}</td>
+            </tr>
+        {/each}
+        </tbody>
+    </table>
 </div>
 
 <style>
@@ -102,31 +90,15 @@
         margin-bottom: 24px;
     }
 
-    .game-list {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    table {
         width: 100%;
+        border-collapse: collapse;
+        background-color: #222222;
     }
 
-    
-    .game-list > div {
-        border-radius: 10px;
+    th, td {
         padding: 10px;
-        margin-bottom: 10px;
-        border: 3px solid transparent;
-    }
-
-    .game-list > .first-position {
-        border: 3px solid #FFD700;
-    }
-
-    .game-list > .second-position {
-        border: 3px solid #C0C0C0;
-    }
-
-    .game-list > .third-position {
-        border: 3px solid #CD7F32;
+        border: 1px solid #ff6961;
+        text-align: left;
     }
 </style>
-

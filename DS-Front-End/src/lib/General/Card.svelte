@@ -11,11 +11,12 @@
             <div class="highscore-info">
                 <div>
                     <p class="rank">Rank: 1st</p>
-                    <p class="score">Score: 1000</p>
+                    <p class="player">Submitted By: {data.title.substring(0, 5)}</p>
+                    
                 </div>
                 <div>
-                    <p>Name: {data.title.substring(0, 5)}</p>
-                    <p>Nationality: {data.body.substring(0, 5)}</p>
+                    <p class="score">Score: 1000</p>
+                    <p class="player">Nationality: {data.body.substring(0, 5)}</p>
                 </div>
             </div>
         </div>
@@ -32,6 +33,10 @@
         display: flex;
     }
 
+    img {
+        border-radius: 10%;
+    }
+
     .card {
         overflow: hidden;
         background-color: #222222;
@@ -41,7 +46,8 @@
     }
 
     .card:hover {
-        scale: 1.025;
+        scale: 1.01;
+        background-color: #2f2f2f;
     }
 
     img {
@@ -70,10 +76,16 @@
 
     .highscore-info > div > p {
         margin: 0;
-        font-size: 1.65em;
+        /* font-size: 1.65em; */
     }
 
-    .rank {
+    .rank, .score {
         font-weight: bold;
+        font-size: 1.5em;
+    }
+
+    .player {
+        text-align: bottom-left;
+        font-size: 1em;
     }
 </style>

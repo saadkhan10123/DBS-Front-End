@@ -6,7 +6,7 @@
 
 <div class="header">
     <div class="title">
-        <a href="/home">WebSite Title</a>
+        <a href="/home">Leaderboard.com</a>
     </div>
     <div class="nav">
         <NavBar />
@@ -38,12 +38,23 @@
 
 .title > a {
     text-align: center;
-    padding: 20px 32px;
+    padding: 24px 32px;
+    margin-bottom: 10px;
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     text-decoration: none;
     color: white;
+
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+
+.title a:hover {
+    font-size: 1.3em;
+    margin-bottom: 12px;
+    transition: all;
+    transition-duration: .2s;
 }
 
 .nav {
