@@ -5,7 +5,7 @@
 
   export let data;
 
-  let user = data.user
+  $: user = data.user
 
 </script>
 

@@ -16,6 +16,7 @@
         max-width: 100%;
         max-height: 100%;
         box-sizing: border-box;
+        grid-column: span 12;
     }
 
     main {
@@ -24,6 +25,4 @@
         padding: 0;
         box-sizing: border-box;
     }
-
-    
 </style>

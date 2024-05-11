@@ -5,7 +5,7 @@
 
 <div class="options-bar">
     {#each options as option}
-        <a data-sveltekit-preload-data="off" class:active = {active === option.name} class="option" href={option.link}>{option.name}</a>
+        <a data-sveltekit-reload data-sveltekit-preload-data="off" class:active = {active === option.name} class="option" href={option.link}>{option.name}</a>
     {/each}
 </div>
 

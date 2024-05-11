@@ -12,7 +12,7 @@
 
 <nav class="admin-bar">
     <ul>
-        <li ><a class:active={active === 'users'} href="/profile/admin/users">Users</a></li>
+        <li ><a data-sveltekit-reload class:active={active === 'users'} href="/profile/admin/users">Users</a></li>
         <li class><a href="/profile/admin/games">Games</a></li>
         <li><a href="/profile/admin/highscores">Highscores</a></li>
         <li><a href="/profile/admin/pending-highscores">Pending Highscores</a></li>
