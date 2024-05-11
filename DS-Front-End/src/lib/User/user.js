@@ -6,22 +6,13 @@ import { useQuery } from '../sql';
 export default {
     getUser: async function (session_id) {
         try {
-            // Get user based on session_id
-            const connection = mysql.createConnection({
-                host: process.env.DB_HOST,
-                user: process.env.DB_USER, 
-                password: process.env.DB_PASSWORD, 
-                database: process.env.DB_NAME
-            }).promise();
+            let query = `SELECT user_id,username, email, nationality FROM user_session NATURAL JOIN user WHERE session_id = ?`
+            const user = await useQuery(query, [session_id]);
 
-            let user_id = await connection.query("SELECT user_id FROM user_session WHERE session_id = ?", [session_id])
-            user_id = user_id[0][0].user_id
+            if (user.length > 0) {
+                return user[0];
+            }
 
-            let user = await connection.query("SELECT * FROM user WHERE user_id = ?", [user_id])
-            user = user[0][0]
-
-            connection.end()
-            return user;
         } catch (error) {
             // console.log(error)
         }

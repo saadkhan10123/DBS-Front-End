@@ -6,7 +6,6 @@
     import { nations } from "$lib/Stores/nations"
     import { onDestroy } from "svelte";
     import { enhance, applyAction } from '$app/forms';
-	import { expoOut } from "svelte/easing";
 
     export let form;
 

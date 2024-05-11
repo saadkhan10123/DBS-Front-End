@@ -1,6 +1,9 @@
 <script>
     import { createEventDispatcher } from 'svelte';
     import Modal from '../General/Modal.svelte';
+    import { enhance } from '$app/forms';
+
+    export let games;
 
     const dispatch = createEventDispatcher();
 
@@ -17,22 +20,30 @@
         reader.onload = e => {
             proofImage = e.target.result
         };
-    }   
+    }  
+
+    console.log(games)
 </script>
 
 <Modal on:disableModal={disableModal}>
-    <form>
+    <form method="POST" action="?/addHighScore" use:enhance={({ submitter }) => {
+        submitter.disabled = true;
+    } }>
         <label for="game-name">Game Name</label>
-        <input type="text" name="game-name" required>
+        <select name="game" required>
+            {#each games as game}
+                <option value="{game.game_id}">{game.title}</option>
+            {/each}
+        </select>
         <label for="score">Score</label>
         <input type="number" name="score" required>
         <label for="game-image">Proof Image</label>
 
         <div class="image-container">
             {#if proofImage}
-            <img class="proof-image" src="{proofImage}" alt="d" on:click={()=>{fileinput.click();}}/>
+                <img class="proof-image" src="{proofImage}" alt="d" on:click={()=>{fileinput.click();}}/>
             {:else}
-            <img class="proof-image" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="" on:click={()=>{fileinput.click();}}/> 
+                <img class="proof-image" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="" on:click={()=>{fileinput.click();}}/> 
             {/if}
             <div class="chan" on:click={()=>{fileinput.click();}}>Choose Image</div>
             <input style="display:none" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >

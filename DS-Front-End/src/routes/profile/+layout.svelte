@@ -22,6 +22,8 @@
 
     let active = "Profile"
 
+    console.log(data)
+
     if(data.isAdmin) {
         options.push({
             name: "Admin",
