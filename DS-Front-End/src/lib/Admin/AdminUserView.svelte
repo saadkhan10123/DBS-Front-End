@@ -50,8 +50,13 @@
         padding: 12px 32px;
         border-radius: 1em;
         font-size: 1em;
-        background-color: #ff6961;
+        background-color: #121212;
         color: white;
         border: none;
+        transition: all 0.2s;
+    }
+
+    button:hover {
+        background-color: #ff6961;
     }
 </style>

@@ -54,17 +54,22 @@
     }
 
     button {
-        background-color: #ff6961;
+        background-color: #f74d01;
         color: white;
         border: none;
-        padding: 0.5em;
+        padding: 0.75em 1em;
         border-radius: 0.5em;
         border-left: none;
+    }
+
+    button:hover { 
+        background-color: #ff6961;
     }
 
     input {
         padding: 0.5em;
         border-radius: 0.5em;
+        margin: 0em 1em;
         border: none;
         border-right: none;
     }
@@ -80,10 +85,9 @@
     }
 
     h1 {
-        margin: 0;
         font-size: 1.25em;
         font-weight: bold;
         text-align: center;
-        padding-right: 1em;
+        margin: 0em 0.5em;
     }
 </style>

@@ -17,7 +17,7 @@
 
 <div class="highscores">
     {#if scores === null} 
-        <h1>You have no higscores right now</h1>
+        <h1>Sorry! You have no higscores right now</h1>
     {:else}
         {#each scores as score}
         <p>{score.user_rank}</p>
@@ -29,3 +29,22 @@
         <AddHighScore {games} on:disableModal={() => {addingHighscore = false}}/>
     {/if}
 </div>
+
+<style>
+    .highscores {
+        margin-left: 3em;
+        margin-top: 2em;
+    }
+
+    button {
+        background-color: #f74d40;
+        border: none;
+        transition: all 0.2s;
+        scale: 1.2;
+        margin-left: 1em;
+    }
+
+    button:hover {
+        background-color: #ff6961;
+    }
+</style>
