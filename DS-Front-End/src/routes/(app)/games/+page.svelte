@@ -3,12 +3,12 @@
 import GameCard from '$lib/Games/GameCard.svelte';
 
     export let data;
-    let games = data.games.slice(0, 10);
+    let games = data.games
 </script>
 
 <div class="gamesGrid">
     {#each games as game}
-        <GameCard game={game}/>
+        <GameCard {game}/>
     {/each}
 </div>
 

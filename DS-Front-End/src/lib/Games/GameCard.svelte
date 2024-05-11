@@ -7,14 +7,18 @@
 <!-- Card for a single game -->
 
 <div class="game-card">
-    <a href={`games/${game.GameID}`}>
+    <a href={`games/${game.game_id}`}>
         <div class="img-container">
             <img src="game-pic.png" alt="The game">            
             <div class="game-data">
-                <h2>{game.Title}</h2>
+                <h2>{game.title}</h2>
             </div>
-        </div>  
-        <p>Total Scores: {game.TotalScores}</p>
+        </div> 
+        {#if game.TotalScores}
+            <p>Total Scores: {game.TotalScores}</p>
+        {:else}
+            <p>{game.rel_year}</p>
+        {/if}
     </a>
 </div>
 

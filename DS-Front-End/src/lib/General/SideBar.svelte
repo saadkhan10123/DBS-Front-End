@@ -1,16 +1,12 @@
 <script>
-
+    export let latestGames;
 </script>
 
 <div class="side-bar">
     <h3>Latest Games</h3>
-    <div class="side-item">Game 1</div>
-    <div class="side-item">Game 2</div>
-    <div class="side-item">Game 3</div>
-    <div class="side-item">Game 4</div>
-    <div class="side-item">Game 5</div>
-    <div class="side-item">Game 6</div>
-    <div class="side-item">Game 7</div>
+    {#each latestGames as game}
+        <div class="side-item"><a href={`games/${game.game_id}`}>{game.title}</a></div>
+    {/each}
 </div>
 
 <style>
@@ -30,11 +26,18 @@ h3 {
 }
 
 .side-item {
-    height: 30px;
     background-color: #222222;
     color: white;
-    padding: 0.75rem 1.5rem; 
     border-radius: 1rem;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0.75rem 1.5rem; 
+    box-sizing: border-box;
+}
 </style>

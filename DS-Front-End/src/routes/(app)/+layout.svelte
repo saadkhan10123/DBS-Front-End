@@ -6,6 +6,7 @@
 
     export let data;
 
+    console.log(data);
     let user = data.user
 </script>
 
@@ -18,7 +19,7 @@
         <slot></slot>
     </div>
     <div class="side-bar">
-        <SideBar />
+        <SideBar latestGames = {data.latestGames} />
     </div>
 </main>
 <footer>
