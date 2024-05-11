@@ -25,7 +25,7 @@
     if(data.isAdmin) {
         options.push({
             name: "Admin",
-            link: "/profile/admin"
+            link: "/profile/admin/users"
         })
     
     }

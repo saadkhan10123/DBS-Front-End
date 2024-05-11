@@ -8,7 +8,7 @@ dotenv.config();
 export async function load({ cookies }) {
     const userInfo = await user.getUser(cookies.get('session_id'));
     return {
-        userInfo
+        // userInfo
     };
 };
 

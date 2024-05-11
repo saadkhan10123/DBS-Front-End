@@ -10,7 +10,7 @@ export async function handle ({ event, resolve }) {
         const cookies = await event.cookies.get("session_id")
         const userInfo = await user.getUser(cookies)
         try {
-            if (!userInfo.username) {
+            if (!userInfo) {
                 console.log("No user")
                 return redirect(302, "/sign-in/login")
             }
