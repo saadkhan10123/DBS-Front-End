@@ -40,6 +40,8 @@
     }
 
     main {
-        margin-top: 2em;
+        margin-top: 4em;
+        margin-left: 3em;
+        margin-right: 2em;
     }
 </style>
