@@ -9,7 +9,7 @@ export async function load({cookies}) {
     try {
         games = await useQuery(query);
     } catch (error) {
-        // console.log(error)
+        console.log(error)
     }
 
     // Fetching the session_id from the cookies
@@ -29,7 +29,7 @@ export async function load({cookies}) {
             games
         }
     } catch (error) {
-        // console.log(error)
+        console.log(error)
     }
     return {
         games
