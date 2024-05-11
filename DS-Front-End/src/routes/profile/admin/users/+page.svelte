@@ -23,7 +23,6 @@
         <h1>User Search</h1>
         <input type="text" bind:value={user}>
         <button on:click={searchUser}><i class="fa fa-search"></i></button>
-        <button on:click={() => invalidateAll()}>Rerun load?</button>
     </div>
 
     <div class="users">

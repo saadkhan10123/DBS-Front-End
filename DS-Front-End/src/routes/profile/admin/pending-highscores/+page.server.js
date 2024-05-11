@@ -4,8 +4,9 @@ import { useQuery } from '$lib/sql.js'
 export async function load() {
     const pendingScores = await useQuery('SELECT * FROM pending_scores');
 
+
     if (pendingScores.length === 0) {
-        return null;
+        return {pendingScores: null};
     }
     return {pendingScores};
 };

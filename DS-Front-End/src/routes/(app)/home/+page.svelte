@@ -2,14 +2,11 @@
 	import GameGrid from "$lib/General/GameGrid.svelte";
 
 	export let data;
-
-	const session_start = new Date().toISOString().slice(0, 19).replace('T', ' ');
-    const session_expire = new Date(new Date().getTime() + 60 * 60000).toISOString().slice(0, 19).replace('T', ' ');
 </script>
 
 <div class="main-screen">
 	<h1>Latest Highscores</h1>
-	<GameGrid data = {data.posts}/>
+	<GameGrid data = {data.latestScore}/>
 </div>
 
 <style>

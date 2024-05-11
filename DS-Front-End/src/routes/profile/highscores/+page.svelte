@@ -4,10 +4,9 @@
 
     import AddHighScore from '$lib/User/AddHighScore.svelte';
 
-    const scores = data.data.result
-    const games = data.data.games
 
-    console.log(scores)
+    $: scores = data.data.highscores
+    $: games = data.data.games
 
     let addingHighscore = false
     const addHighscore = () => {
@@ -17,7 +16,7 @@
 </script>
 
 <div class="highscores">
-    {#if scores.length === 0} 
+    {#if scores === null} 
         <h1>You have no higscores right now</h1>
     {:else}
         {#each scores as score}

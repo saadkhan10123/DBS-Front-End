@@ -7,15 +7,42 @@
         const route = value.route.id;
         const routeName = route.split("/")[3];
         active = routeName;
+        if (routeName === "users") {
+            active = "users";
+        } else if (routeName === "games") {
+            active = "games";
+        } else if (routeName === "highscores") {
+            active = "highscores";
+        } else if (routeName === "pending-highscores") {
+            active = "pending highscores";
+        }
     })
+
+    let links = [
+        {
+            name: "Users",
+            link: "/profile/admin/users"
+        },
+        {
+            name: "Games",
+            link: "/profile/admin/games"
+        },
+        {
+            name: "Highscores",
+            link: "/profile/admin/highscores"
+        },
+        {
+            name: "Pending Highscores",
+            link: "/profile/admin/pending-highscores"
+        }
+    ]
 </script>
 
 <nav class="admin-bar">
     <ul>
-        <li ><a data-sveltekit-reload class:active={active === 'users'} href="/profile/admin/users">Users</a></li>
-        <li class><a href="/profile/admin/games">Games</a></li>
-        <li><a href="/profile/admin/highscores">Highscores</a></li>
-        <li><a href="/profile/admin/pending-highscores">Pending Highscores</a></li>
+        {#each links as link}
+            <li><a data-sveltekit-reload class:active={active === link.name.toLowerCase()} href={link.link}>{link.name}</a></li>
+        {/each}
     </ul>
 </nav>
 
