@@ -4,10 +4,10 @@
             <a href="/games"><p>All Games</p></a>
         </li>
         <li>
-            <a href="https://www.youtube.com/"><p>Popular Games</p></a>
+            <a href="/popular-games"><p>Popular Games</p></a>
         </li>
         <li>
-            <a href="https://www.youtube.com/"><p>Top Users</p></a>
+            <a href="/top-users"><p>Top Users</p></a>
         </li>
     </ul>
 </nav>

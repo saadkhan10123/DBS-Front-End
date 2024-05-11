@@ -3,37 +3,25 @@ import user from '$lib/User/user.js';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({cookies}) {
-    let query = `SELECT game_id, title FROM game`
-    let games;
-    // Fetching all game names and ids from database
-    try {
-        games = await useQuery(query);
-    } catch (error) {
-        console.log(error)
-    }
+    const games = await useQuery('SELECT game_id, title FROM game');
 
-    // Fetching the session_id from the cookies
     const session_id = cookies.get('session_id');
 
-    // Fetching the user_id from the session_id
-    const user_id = await user.getUserID(session_id);
+    const query = 'SELECT username, highscore, title FROM scoreboard NATURAL JOIN user NATURAL JOIN game NATURAL JOIN user_session WHERE session_id = ?'
 
-    // Fetching data from the MySQL database
-    query = `SELECT * FROM highscores WHERE user_id = ?`
+    const highscores = await useQuery(query, [session_id]);
 
-    try {
-        const result = await useQuery(query, [user_id]);
-        console.log(result)
+    if (highscores.length === 0) {
         return {
-            result,
+            highscores: null,
             games
-        }
-    } catch (error) {
-        console.log(error)
+        };
     }
+
     return {
+        highscores,
         games
-    }
+    };
 };
 
 /** @type {import('./$types').Actions} */

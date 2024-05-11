@@ -3,20 +3,20 @@
 </script>
 
 <div class="card">
-    <a href="/games/{data.id}">
+    <a href="/games/{data.game_id}">
         <div class="info-container">
             <div class="game-img">
                 <img src="game-pic.png" alt="The game">            
             </div>
             <div class="highscore-info">
                 <div>
-                    <p class="rank">Rank: 1st</p>
-                    <p class="player">Submitted By: {data.title.substring(0, 5)}</p>
+                    <p class="rank">Rank: {data.user_rank}</p>
+                    <p class="player">Submitted By: {data.username}</p>
                     
                 </div>
                 <div>
                     <p class="score">Score: 1000</p>
-                    <p class="player">Nationality: {data.body.substring(0, 5)}</p>
+                    <p class="player">Nationality: {data.nationality}</p>
                 </div>
             </div>
         </div>

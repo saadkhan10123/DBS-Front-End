@@ -7,15 +7,14 @@
 <!-- Card for a single game -->
 
 <div class="game-card">
-    <a href={`games/${game.id}`}>
+    <a href={`games/${game.GameID}`}>
         <div class="img-container">
             <img src="game-pic.png" alt="The game">            
             <div class="game-data">
-                <h2>{game.title.substring(0, 5)}</h2>
-                <p>{game.body.substring(0, 5)}</p>
+                <h2>{game.Title}</h2>
             </div>
         </div>  
-        <p>Something</p>
+        <p>Total Scores: {game.TotalScores}</p>
     </a>
 </div>
 
