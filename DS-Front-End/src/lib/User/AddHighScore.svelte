@@ -59,7 +59,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
-        background-color: darkgrey;
+        background-color: #222222;
         padding: 1rem;
         border-radius: 1rem;
         color: white;
@@ -75,5 +75,16 @@
         height: 200px;
         object-fit: cover;
         border-radius: 1rem;
+    }
+
+    button {
+        background-color: #121212;
+        width: 50%;
+        align-self: center;
+        border: none;
+    }
+
+    button:hover {
+        background-color: #ff6961;
     }
 </style>
