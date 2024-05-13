@@ -20,7 +20,7 @@
 
     ]
 
-    let active = "Profile"
+    let active = ["Profile"]
 
     if(data.isAdmin) {
         options.push({
@@ -37,12 +37,20 @@
 
     page.subscribe(value => {
         const route = value.route.id;
-        const routeName = route.split("/")[2];
-        active = routeName.charAt(0).toUpperCase() + routeName.slice(1);
-        if(active === "Me") {
-            active = "Profile"
-        } else if (active === "Highscores") {
-            active = "My Highscores"
+        let routeName = route.split("/")[2];
+        active[0] = routeName.charAt(0).toUpperCase() + routeName.slice(1);
+        if(active[0] === "Me") {
+            active[0] = "Profile"
+        } else if (active[0] === "Highscores") {
+            active[0] = "My Highscores"
+        }
+        
+        routeName = route.split("/")[3];
+        if(routeName) {
+            active[1] = routeName.charAt(0).toUpperCase() + routeName.slice(1);
+            if (active[1] === "Pending-highscores") {
+                active[1] = "Pending Highscores"
+            }
         }
     })
 </script>
@@ -67,7 +75,8 @@
 <style>
     .options-bar {
         display: flex;
-        height: 100%;
+        height: auto;
+        max-height: 100%;
         grid-column: span 3;
     }
 

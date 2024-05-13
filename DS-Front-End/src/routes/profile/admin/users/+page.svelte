@@ -49,7 +49,7 @@
         gap: 1em;
         width: 100%;
         align-items: center;
-        height: 550px;
+        height: 400px;
         overflow: auto;
     }
 

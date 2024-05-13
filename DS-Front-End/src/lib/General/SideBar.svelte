@@ -5,7 +5,7 @@
 <div class="side-bar">
     <h3>Latest Games</h3>
     {#each latestGames as game}
-        <div class="side-item"><a href={`games/${game.game_id}`}>{game.title}</a></div>
+        <div class="side-item"><a data-sveltekit-reload href={`/games/${game.game_id}`}>{game.title}</a></div>
     {/each}
 </div>
 

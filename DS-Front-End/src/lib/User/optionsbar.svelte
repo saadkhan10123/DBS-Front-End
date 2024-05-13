@@ -1,22 +1,63 @@
 <script>
+    import OptionsBar from '$lib/User/OptionsBar.svelte';
+
     export let options;
-    export let active;    
+    export let active;
+
+    let adminOptions = [
+        {
+            name: "Users",
+            link: "/profile/admin/users"
+        },
+        {
+            name: "Games",
+            link: "/profile/admin/games"
+        },
+        {
+            name: "Highscores",
+            link: "/profile/admin/highscores"
+        },
+        {
+            name: "Pending Highscores",
+            link: "/profile/admin/pending-highscores"
+        }
+    ]
+
+    if (typeof active !== 'object') {
+        active = [active, ''];
+        console.log(active);
+    }
 </script>
 
 <div class="options-bar">
     {#each options as option}
-        <a data-sveltekit-reload data-sveltekit-preload-data="off" class:active = {active === option.name} class="option" href={option.link}>{option.name}</a>
+        {#if option.name === "Admin"}
+            <a data-sveltekit-reload data-sveltekit-preload-data="off" class:active = {active[0] === option.name} class="option" href={option.link}>{option.name}</a>
+            {#if active[0] === 'Admin'}
+            <div class="sub-options">
+                <OptionsBar options={adminOptions} active={active[1]}/>
+            </div>
+            {/if}
+        {:else}
+            <a data-sveltekit-reload data-sveltekit-preload-data="off" class:active = {active[0] === option.name} class="option" href={option.link}>{option.name}</a>
+        {/if}
     {/each}
 </div>
 
 <style>
+    .sub-options {
+        height: fit-content;
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
     .options-bar {
         display: flex;
         flex-direction: column;
         justify-content: start;
         flex: 3;
         background-color: #f74d40;
-        height: 100%;
+        height: auto;
         box-sizing: border-box;
         padding-top: 15px;
     }
