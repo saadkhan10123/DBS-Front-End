@@ -1,5 +1,6 @@
 <script>
     export let data;
+    export let isAdmin = false;
 </script>
 
 <div class="card">
@@ -18,6 +19,11 @@
                     <p class="score">Score: 1000</p>
                     <p class="player">Nationality: {data.nationality}</p>
                 </div>
+                {#if isAdmin}
+                    <div>
+                        <button>Delete</button>
+                    </div>
+                {/if}
             </div>
         </div>
     </a>
