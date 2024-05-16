@@ -21,16 +21,24 @@
             proofImage = e.target.result
         };
     }  
-
-    console.log(games)
 </script>
 
 <Modal on:disableModal={disableModal}>
-    <form method="POST" action="?/addHighScore" use:enhance={({ submitter }) => {
+    <form method="POST" action="?/addHighScore" use:enhance={({ submitter, formData }) => {
         submitter.disabled = true;
+        formData.append("proofImage", proofImage);
+
+        return ({ result }) => {
+            console.log(result);
+            if (result.type === "success") {
+                disableModal();
+            } else {
+                submitter.disabled = false;
+            }
+        }
     } }>
         <label for="game-name">Game Name</label>
-        <select name="game" required>
+        <select name="game_id" required>
             {#each games as game}
                 <option value="{game.game_id}">{game.title}</option>
             {/each}

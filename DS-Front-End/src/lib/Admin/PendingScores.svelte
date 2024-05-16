@@ -4,9 +4,11 @@
 
 <div class="score-card">
     <div class="score-info">
+
+        <img src={'data:image/jpeg;base64,' + score.proof_image.substring(20)} alt="proof">
         <h2>{score.username}</h2>
-        <p>Score: {score.score}</p>
-        <p>Time: {score.time}</p>
+        <p>Score: {score.total_score}</p>
+        <p>Time: {score.submission_date}</p>
         <button on:click={sendAcceptReq}>Accept Score</button>
         <button on:click={sendDelReq}>Reject Score</button>
     </div>
@@ -21,7 +23,7 @@
         background-color: #222222;
         color: white;
         border-radius: 1em;
-        width: 40%;
+        width: 60%;
     }
 
     .score-info {

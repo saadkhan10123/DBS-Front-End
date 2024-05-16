@@ -6,8 +6,7 @@
 
     export let data;
 
-    console.log(data);
-    let user = data.user
+    $: user = data.userInfo
 </script>
 
 <header>

@@ -2,9 +2,6 @@
     import PendingScores from '$lib/Admin/PendingScores.svelte';
     /** @type {import('./$types').PageData} */
     export let data;
-
-    console.log(data);
-
 </script>
 
 <div class="pending-scores">
@@ -25,6 +22,8 @@
         display: flex;
         flex-direction: column;
         gap: 5em;
-        max-height: 100%;
+        max-height: 500px;
+        overflow: auto;
+        margin: 40px 60px;
     }
 </style>

@@ -6,7 +6,7 @@
 
     export let data;
 
-    let user = data.userInfo
+    $: user = data.userInfo
 
     let options = [
         {
@@ -50,6 +50,8 @@
             active[1] = routeName.charAt(0).toUpperCase() + routeName.slice(1);
             if (active[1] === "Pending-highscores") {
                 active[1] = "Pending Highscores"
+            } else if (active[1] === "Add-game") {
+                active[1] = "Add Game"
             }
         }
     })

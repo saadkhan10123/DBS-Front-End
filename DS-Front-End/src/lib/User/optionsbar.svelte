@@ -10,8 +10,8 @@
             link: "/profile/admin/users"
         },
         {
-            name: "Games",
-            link: "/profile/admin/games"
+            name: "Add Game",
+            link: "/profile/admin/add-game"
         },
         {
             name: "Highscores",
@@ -25,7 +25,6 @@
 
     if (typeof active !== 'object') {
         active = [active, ''];
-        console.log(active);
     }
 </script>
 

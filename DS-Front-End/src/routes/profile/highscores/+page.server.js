@@ -26,7 +26,7 @@ export async function load({cookies}) {
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-    addHighscore: async (request, cookies) => {
+    addHighScore: async ({ request, cookies }) => {
         let data = await request.formData()
 
         const session_id = cookies.get('session_id');
@@ -40,18 +40,18 @@ export const actions = {
         // Convert the proof image to a BLOB
         proofImage = Buffer.from(proofImage, 'base64');
 
-        console.log(game_id, score, submissionDate)
+        // console.log(game_id, score, submissionDate)
 
-        const query = `INSERT INTO highscores (user_id, score, submission_date, proof_image) VALUES (?, ?, ?, ?)`
+        const query = `INSERT INTO pending_scores (user_id, game_id, total_score, submission_date, proof_image) VALUES (?, ?, ?, ?, ?)`
 
-        // try {
-        //     await useQuery(query, [user_id, score, submissionDate, proofImage]);
-        //     return {
-        //         status: 200,
-        //         type: 'success',
-        //     }
-        // } catch (error) {
-        //     // console.log(error)
-        // }
+        try {
+            await useQuery(query, [user_id, game_id, score, submissionDate, proofImage]);
+            return {
+                status: 200,
+                type: 'success',
+            }
+        } catch (error) {
+            console.log(error)
+        }
     },
 }

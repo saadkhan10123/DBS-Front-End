@@ -1,6 +1,11 @@
 <script>
     export let data;
     export let isAdmin = false;
+
+    const handleDelete = (event) => {
+        event.stopPropagation();
+        console.log("Delete");
+    }
 </script>
 
 <div class="card">
