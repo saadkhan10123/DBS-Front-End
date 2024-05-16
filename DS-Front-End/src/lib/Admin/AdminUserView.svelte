@@ -3,13 +3,12 @@
     import { invalidateAll } from '$app/navigation';
 
     const sendDelReq = async () => {
-        const res = await fetch(`api?userId=${user.user_id}`, {
+        const res = await fetch(`api/delUser?userId=${user.user_id}`, {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             }
         });
-        console.log(res)
 
         if (res.ok) {
             console.log("User deleted successfully");

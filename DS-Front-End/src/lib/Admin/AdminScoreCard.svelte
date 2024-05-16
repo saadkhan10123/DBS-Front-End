@@ -1,42 +1,45 @@
 <script>
-    export let data;
-    export let isAdmin = false;
+    export let highscore;
 
     const handleDelete = (event) => {
         event.stopPropagation();
         console.log("Delete");
     }
+
+    console.log(highscore);
 </script>
 
 <div class="card">
-    <a href="/games/{data.game_id}">
-        <div class="info-container">
-            <div class="game-img">
-                <img src={'data:image/jpeg;base64,' + data.game_image.substring(20)} alt="The game">            
+    <div class="info-container">
+        <div class="game-img">
+            <img src={'data:image/jpeg;base64,' + highscore.game_image.substring(20)} alt="The game">            
+        </div>
+        <div class="highscore-info">
+            <div>
+                <p class="rank">Rank: {highscore.user_rank}</p>
+                <p class="player">Submitted By: {highscore.username}</p>
+                
             </div>
-            <div class="highscore-info">
-                <div>
-                    <p class="rank">Rank: {data.user_rank}</p>
-                    <p class="player">Submitted By: {data.username}</p>
-                    
-                </div>
-                <div>
-                    <p class="score">Score: 1000</p>
-                    <p class="player">Nationality: {data.nationality}</p>
-                </div>
+            <div>
+                <p class="score">Score: 1000</p>
+                <p class="player">Nationality: {highscore.nationality}</p>
+            </div>
+            <div>
+                <button>Delete</button>
             </div>
         </div>
-    </a>
+    </div>
 </div>
 
 <style>
-    a > div {
+    .info-container {
         width: 100%;
         color: white;
         padding: 1em;
         text-decoration: none;
         box-sizing: border-box;
         display: flex;
+        height: 200px;
     }
 
     img {
@@ -60,10 +63,6 @@
         height: 100%;
         aspect-ratio: 3 / 4;
         object-fit: cover;
-    }
-
-    .info-container {
-        height: 200px;
     }
 
     .highscore-info {

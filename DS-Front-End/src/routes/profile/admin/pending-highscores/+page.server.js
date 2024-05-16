@@ -9,7 +9,7 @@ export async function load() {
         return {pendingScores: null};
     }
 
-    pendingScores.forEach(async (score) => {
+    pendingScores.forEach((score) => {
         if (score.proof_image) {
             const base64Image = score.proof_image.toString('base64');
             score.proof_image = base64Image;

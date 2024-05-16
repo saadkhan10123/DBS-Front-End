@@ -1,5 +1,36 @@
 <script>
     export let score;
+
+    const sendAcceptReq = async () => {
+        const res = await fetch(`api/scores/accept?scoreId=${score.score_id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (res.ok) {
+            console.log('Score accepted');
+        } else {
+            console.log('Failed to accept score');
+        }
+    }
+
+    const sendDelReq = async () => {
+        const res = await fetch(`api/scores/reject?scoreId=${score.score_id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (res.ok) {
+            console.log('Score rejected');
+        } else {
+            console.log('Failed to reject score');
+        }
+    }
+
 </script>
 
 <div class="score-card">
