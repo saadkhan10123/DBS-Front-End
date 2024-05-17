@@ -5,8 +5,6 @@
     import AdminScoreCard from '$lib/Admin/AdminScoreCard.svelte'
 
     $: scores = data.highscores
-
-    console.log(scores)
     
     let user = ''
     const searchScore = async () => {

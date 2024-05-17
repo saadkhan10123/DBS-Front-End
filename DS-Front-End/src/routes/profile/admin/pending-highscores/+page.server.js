@@ -2,7 +2,7 @@ import { useQuery } from '$lib/sql.js'
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load() {
-    const pendingScores = await useQuery('SELECT * FROM pending_scores');
+    const pendingScores = await useQuery('SELECT username, proof_image, total_score, submission_date, score_id FROM pending_scores NATURAL JOIN user');
 
 
     if (pendingScores.length === 0) {

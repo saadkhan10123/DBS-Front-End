@@ -1,6 +1,8 @@
 <script>
     export let score;
 
+    import { invalidateAll } from '$app/navigation';
+
     const sendAcceptReq = async () => {
         const res = await fetch(`api/scores/accept?scoreId=${score.score_id}`, {
             method: 'POST',
@@ -14,6 +16,7 @@
         } else {
             console.log('Failed to accept score');
         }
+        await invalidateAll();
     }
 
     const sendDelReq = async () => {
@@ -29,6 +32,7 @@
         } else {
             console.log('Failed to reject score');
         }
+        await invalidateAll();
     }
 
 </script>

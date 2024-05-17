@@ -3,20 +3,22 @@
 
     import LeaderBoard from '$lib/Games/LeaderBoard.svelte';
 
-    // console.log(data);
+    const gameInfo = data.gameInfo;
+    const scores = data.scores;
 </script>
 
 <div class="gamePage">
     <div class="game-info">
-        <img src="game-pic.png" alt="The game">            
-        <!-- <h1>Game Title {post.title}</h1> -->
+        <img src={'data:image/jpeg;base64,' + gameInfo.game_image.substring(20)} alt="The game">            
+        <h1>{gameInfo.title}</h1>
+        <h3>{gameInfo.rel_year}</h3>
         <div class="post-body">
-            <!-- {post.body} -->
+            {gameInfo.description}
         </div>
     </div>
 </div>
 <div class="leaderboard">
-    <LeaderBoard />
+    <LeaderBoard {scores}/>
     <button>
         <a href="/games">Back to Games</a>
     </button>

@@ -1,6 +1,8 @@
 <script>
     import Game from "./Game.svelte";
 
+    export let scores
+
     // Data for game leaderboard
     let gameList = [
         {
@@ -75,11 +77,11 @@
             </tr>
         </thead>
         <tbody>
-            {#each gameList as game}
+            {#each scores as score}
             <tr>
-                <td>{game.rank}</td>
-                <td>{game.playerName}</td>
-                <td>{game.score}</td>
+                <td>{score.user_rank}</td>
+                <td>{score.username}</td>
+                <td>{score.highscore}</td>
             </tr>
             {/each}
         </tbody>

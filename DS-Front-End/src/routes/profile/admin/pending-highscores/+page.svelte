@@ -2,13 +2,15 @@
     import PendingScores from '$lib/Admin/PendingScores.svelte';
     /** @type {import('./$types').PageData} */
     export let data;
+
+    $: pendingScores = data.pendingScores;
 </script>
 
 <div class="pending-scores">
-    {#if data.pendingScores === null}
+    {#if pendingScores === null}
         <h1>No pending scores</h1>
     {:else}
-        {#each data.pendingScores as score}
+        {#each pendingScores as score}
             <PendingScores {score}/>
         {/each}
     {/if}

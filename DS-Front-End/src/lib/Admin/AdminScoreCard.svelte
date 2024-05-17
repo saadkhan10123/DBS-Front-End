@@ -1,12 +1,22 @@
 <script>
     export let highscore;
 
-    const handleDelete = (event) => {
-        event.stopPropagation();
-        console.log("Delete");
+    const handleDelete = async (event) => {
+        const res = await fetch(`api/scores/del?scoreId=${highscore.score_id}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (res.ok) {
+            console.log("Score deleted successfully");
+        } else {
+            console.log("Failed to delete score");
+        }
+        await invalidateAll();
     }
 
-    console.log(highscore);
 </script>
 
 <div class="card">
@@ -21,11 +31,11 @@
                 
             </div>
             <div>
-                <p class="score">Score: 1000</p>
+                <p class="score">Score: {highscore.highscore}</p>
                 <p class="player">Nationality: {highscore.nationality}</p>
             </div>
             <div>
-                <button>Delete</button>
+                <button on:click={handleDelete}>Delete</button>
             </div>
         </div>
     </div>

@@ -4,8 +4,6 @@
 
     export let data;
 
-
-    console.log(data);
     let games = data.popularGames;
 </script>
 

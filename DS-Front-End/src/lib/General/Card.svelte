@@ -1,6 +1,5 @@
 <script>
     export let data;
-    export let isAdmin = false;
 
     const handleDelete = (event) => {
         event.stopPropagation();
@@ -21,7 +20,7 @@
                     
                 </div>
                 <div>
-                    <p class="score">Score: 1000</p>
+                    <p class="score">Score: {data.highscore}</p>
                     <p class="player">Nationality: {data.nationality}</p>
                 </div>
             </div>

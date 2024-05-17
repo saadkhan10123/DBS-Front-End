@@ -10,7 +10,7 @@ export async function load({ url }) {
 
 
     if(searchHighscore) {
-        const highscores = await useQuery('SELECT * FROM scoreboard NATURAL JOIN user NATURAL JOIN game WHERE username = ?', [searchHighscore]);
+        const highscores = await useQuery('SELECT user_rank, highscore, username, game_image, score_id, title, nationality FROM scoreboard NATURAL JOIN user NATURAL JOIN game WHERE username = ?', [searchHighscore]);
 
         if (highscores.length === 0) {
             return null;
@@ -26,7 +26,7 @@ export async function load({ url }) {
         return {highscores};
     }
 
-    const highscores = await useQuery('SELECT * FROM scoreboard NATURAL JOIN user NATURAL JOIN game');
+    const highscores = await useQuery('SELECT user_rank, highscore, username, game_image, score_id, title, nationality FROM scoreboard NATURAL JOIN user NATURAL JOIN game');
 
     highscores.forEach((score) => {
         if (score.game_image) {

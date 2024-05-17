@@ -1,7 +1,6 @@
 <script>
     /** @type {import('./$types').Game} */
     export let game;
-    // console.log(game);
 </script>
 
 <!-- Card for a single game -->

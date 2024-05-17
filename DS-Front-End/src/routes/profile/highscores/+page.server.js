@@ -7,7 +7,7 @@ export async function load({cookies}) {
 
     const session_id = cookies.get('session_id');
 
-    const query = 'SELECT username, highscore, title FROM scoreboard NATURAL JOIN user NATURAL JOIN game NATURAL JOIN user_session WHERE session_id = ?'
+    const query = 'SELECT username, highscore, title, user_rank, score_id FROM scoreboard NATURAL JOIN user NATURAL JOIN game NATURAL JOIN user_session WHERE session_id = ?'
 
     const highscores = await useQuery(query, [session_id]);
 

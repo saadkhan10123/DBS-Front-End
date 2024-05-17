@@ -9,15 +9,13 @@ export async function load({ params }) {
     let scores;
 
     try {    
-        gameInfo = await useQuery('SELECT * FROM game WHERE game_id = ?', [game_id]);
+        gameInfo = await useQuery('SELECT *, year(release_year) rel_year FROM game WHERE game_id = ?', [game_id]);
 
         gameInfo = gameInfo[0]
-        console.log(Object.keys(gameInfo));
         
-        // console.log(game[0].game_image);
-        // const base64Image = game[0].game_image.toString('base64');
-        // game[0].game_image = base64Image;
-        // scores = await useQuery('SELECT * FROM scoreboard NATURAL JOIN user WHERE game_id = ? ORDER BY highscore DESC', [game_id]);
+        const base64Image = gameInfo.game_image.toString('base64');
+        gameInfo.game_image = base64Image;
+        scores = await useQuery('SELECT * FROM scoreboard NATURAL JOIN user WHERE game_id = ? ORDER BY highscore DESC', [game_id]);
     } catch (error) {
         console.error(error);
         return {
@@ -28,7 +26,7 @@ export async function load({ params }) {
 
     return {
         status: 200,
-        // game,
-        // scores
+        gameInfo,
+        scores
     };
 };
