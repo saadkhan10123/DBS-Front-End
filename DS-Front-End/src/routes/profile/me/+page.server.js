@@ -1,9 +1,7 @@
 /** @type {import('./$types').PageServerLoad} */
 import user from '$lib/User/user.js';
 import { fail } from '@sveltejs/kit';
-import mysql from "mysql2"
-import dotenv from 'dotenv';
-dotenv.config();
+import { useQuery } from '$lib/sql.js'
 
 export async function load({ cookies }) {
     const userInfo = await user.getUser(cookies.get('session_id'));
@@ -24,20 +22,13 @@ export const actions = {
             return fail(400, { message: "Passwords do not match"})
         }
 
-        const userInfo = await user.getUser(cookies.get('session_id'));
+        const userInfo = await useQuery('SELECT * FROM user NATURAL JOIN user_session WHERE session_id = ?', [cookies.get('session_id')]);
 
-        if (userInfo.password !== oldPassword) {
+        if (userInfo[0].password !== oldPassword) {
             return fail(400, { message: "Incorrect Password"})
         }
 
-        const connection = mysql.createConnection({
-            host: process.env.DB_HOST,
-            user: process.env.DB_USER, 
-            password: process.env.DB_PASSWORD, 
-            database: process.env.DB_NAME
-        }).promise();
-
-        await connection.query("UPDATE users SET password = ? WHERE user_id = ?", [newPassword, userInfo.user_id])
+        await useQuery("UPDATE user SET password = ? WHERE user_id = ?", [newPassword, userInfo[0].user_id])
 
         return {
             status: 200,

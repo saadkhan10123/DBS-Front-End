@@ -26,6 +26,8 @@
             return async ({ result }) => {
                 if (result.type === "success") {
                     disableModal();
+                    // Make an alert message to show the user that the password has been changed
+                    window.alert("Password has been changed successfully");
                 } else {
                     console.log(result);
                     error = result.data.message;
