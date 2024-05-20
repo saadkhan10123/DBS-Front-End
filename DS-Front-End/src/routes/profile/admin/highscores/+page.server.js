@@ -8,7 +8,6 @@ export async function load({ url }) {
 
     await rankUsers(3);
 
-
     if(searchHighscore) {
         const highscores = await useQuery('SELECT user_rank, highscore, username, game_image, score_id, title, nationality FROM scoreboard NATURAL JOIN user NATURAL JOIN game WHERE username = ?', [searchHighscore]);
 

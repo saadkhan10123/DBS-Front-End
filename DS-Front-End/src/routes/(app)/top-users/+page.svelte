@@ -15,28 +15,9 @@
 
 <style>
     .top-users {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        box-sizing: border-box;
-        gap: 2em 1em;
-    }
-
-    @media (max-width: 1200px) {
-        .top-users {
-            grid-template-columns: repeat(4, 1fr);
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .top-users {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (max-width: 800px) {
-        .top-users {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
     }
 
     div {

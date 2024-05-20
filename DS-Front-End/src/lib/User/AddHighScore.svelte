@@ -54,7 +54,7 @@
                 <img class="proof-image" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="" on:click={()=>{fileinput.click();}}/> 
             {/if}
             <div class="chan" on:click={()=>{fileinput.click();}}>Choose Image</div>
-            <input style="display:none" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
+            <input style="display:none" type="file" accept=".jpg, .jpeg" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
         </div>
 
         <button type="submit">Add Highscore</button>
@@ -81,7 +81,7 @@
     .proof-image {
         width: 100%;
         height: 200px;
-        object-fit: cover;
+        object-fit: fill;
         border-radius: 1rem;
     }
 

@@ -3,6 +3,7 @@
     export let data;
 
     import AddHighScore from '$lib/User/AddHighScore.svelte';
+    import Card from '$lib/General/Card.svelte';
 
 
     $: scores = data.data.highscores
@@ -20,8 +21,7 @@
         <h1>Sorry! You have no higscores right now</h1>
     {:else}
         {#each scores as score}
-        <p>{score.user_rank}</p>
-        <p>{score.highscore}</p>
+            <Card data={score}/>
         {/each}
     {/if}
     <button on:click={addHighscore}>Add Highscore</button>
@@ -32,8 +32,7 @@
 
 <style>
     .highscores {
-        margin-left: 3em;
-        margin-top: 2em;
+        padding: 2em;
     }
 
     button {
@@ -41,7 +40,7 @@
         border: none;
         transition: all 0.2s;
         scale: 1.2;
-        margin-left: 1em;
+        margin: 2em;
     }
 
     button:hover {

@@ -49,7 +49,7 @@
                     <img class="proof-image" src="\default.png" alt="" on:click={()=>{fileinput.click();}}/> 
                 {/if}
                 <div class="chan" on:click={()=>{fileinput.click();}}></div>
-                <input style="display:none" type="file" accept=".jpg, .jpeg, .png" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
+                <input style="display:none" type="file" accept=".jpg, .jpeg" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
             </div>
 
             <button type="submit">Add Game</button>

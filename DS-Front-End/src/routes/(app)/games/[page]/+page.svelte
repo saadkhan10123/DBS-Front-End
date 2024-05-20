@@ -9,12 +9,14 @@
 
 <div class="gamePage">
     <div class="game-info">
-        <img src={'data:image/jpeg;base64,' + gameInfo.game_image.substring(20)} alt="The game">            
-        <h1>{gameInfo.title}</h1>
-        <h3>{gameInfo.rel_year}</h3>
-        <div class="post-body">
-            {gameInfo.description}
-        </div>
+        <img src={'data:image/jpeg;base64,' + gameInfo.game_image.substring(20)} alt="The game">
+        <div class="game-description">
+            <h1>{gameInfo.title}</h1>
+            <h3>Release Year: {gameInfo.rel_year}</h3>
+            <div>
+                {gameInfo.description}
+            </div>
+        </div>    
     </div>
 </div>
 <div class="leaderboard">
@@ -26,6 +28,21 @@
 </div>
 
 <style>
+    .game-info {
+        display: flex;
+    }
+
+    .game-info > img {
+        border-radius: 10%;
+        aspect-ratio: 3 / 4;
+        height: 10em;
+        object-fit: cover;
+    }
+
+    .game-description {
+        margin-left: 4em;
+    }
+
     .gamePage, .leaderboard {
         padding: 24px 64px;
     }

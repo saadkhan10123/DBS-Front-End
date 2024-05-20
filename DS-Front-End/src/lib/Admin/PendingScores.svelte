@@ -44,12 +44,20 @@
         <h2>{score.username}</h2>
         <p>Score: {score.total_score}</p>
         <p>Time: {score.submission_date}</p>
-        <button on:click={sendAcceptReq}>Accept Score</button>
-        <button on:click={sendDelReq}>Reject Score</button>
+        <div class="button-container">
+            <button on:click={sendAcceptReq}>Accept Score</button>
+            <button on:click={sendDelReq}>Reject Score</button>
+        </div>
     </div>
 </div>
 
 <style>
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
     .score-card {
         display: flex;
         flex-direction: row;
@@ -72,5 +80,12 @@
         background-color: #ff6961;
         color: white;
         border: none;
+    }
+
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: fill;
+        border-radius: 1rem;
     }
 </style>

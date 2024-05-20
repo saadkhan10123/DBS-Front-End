@@ -1,6 +1,8 @@
 <script>
     /** @type {import('./$types').Game} */
     export let game;
+
+    import { image } from "../image.js"
 </script>
 
 <!-- Card for a single game -->
@@ -8,7 +10,7 @@
 <div class="game-card">
     <a href={`games/${game.game_id}`}>
         <div class="img-container">
-            <img src={'data:image/jpeg;base64,' + game.game_image.substring(20)} alt="The game">            
+            <img src={image(game.game_image)} alt="The game">            
             <div class="game-data">
                 <h2>{game.title}</h2>
             </div>

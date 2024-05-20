@@ -1,10 +1,5 @@
 <script>
     export let data;
-
-    const handleDelete = (event) => {
-        event.stopPropagation();
-        console.log("Delete");
-    }
 </script>
 
 <div class="card">

@@ -7,9 +7,13 @@ export async function load({cookies}) {
 
     const session_id = cookies.get('session_id');
 
-    const query = 'SELECT username, highscore, title, user_rank, score_id FROM scoreboard NATURAL JOIN user NATURAL JOIN game NATURAL JOIN user_session WHERE session_id = ?'
+    const query = 'SELECT username, highscore, user_rank, score_id, game_image, game_id, nationality FROM scoreboard NATURAL JOIN user NATURAL JOIN game NATURAL JOIN user_session WHERE session_id = ?'
 
     const highscores = await useQuery(query, [session_id]);
+
+    highscores.forEach(score => {
+        score.game_image = score.game_image.toString('base64');
+    });
 
     if (highscores.length === 0) {
         return {

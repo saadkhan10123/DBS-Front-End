@@ -1,7 +1,8 @@
 <script>
     export let highscore;
+    import { invalidateAll } from '$app/navigation';
 
-    const handleDelete = async (event) => {
+    const handleDelete = async () => {
         const res = await fetch(`api/scores/del?scoreId=${highscore.score_id}`, {
             method: 'DELETE',
             headers: {
@@ -65,7 +66,6 @@
     }
 
     .card:hover {
-        scale: 1.01;
         background-color: #2f2f2f;
     }
 

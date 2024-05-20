@@ -2,6 +2,7 @@
     /** @type {import('./$types').PageData} */
     export let data;
 
+    import { goto } from '$app/navigation'
     import AdminScoreCard from '$lib/Admin/AdminScoreCard.svelte'
 
     $: scores = data.highscores
@@ -9,7 +10,7 @@
     let user = ''
     const searchScore = async () => {
         // set the url to the search query
-        await goto(`/profile/admin/users?param1=${user}`, { replaceState: true })
+        await goto(`/profile/admin/highscores?param1=${user}`, { replaceState: true })
     }
 </script>
 
@@ -37,6 +38,14 @@
         flex-direction: column;
         gap: 5em;
         max-height: 100%;
+    }
+
+    .highscore-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+        height: 400px;
+        overflow: auto;
     }
 
     .search-highscores {

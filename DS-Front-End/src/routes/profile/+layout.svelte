@@ -52,12 +52,14 @@
                 active[1] = "Pending Highscores"
             } else if (active[1] === "Add-game") {
                 active[1] = "Add Game"
+            } else if (active[1].startsWith("Highscores")) {
+                active[1] = "Highscores"
+            } else if(active[1].startsWith("Users")) {
+                active[1] = "Users"
             }
         }
     })
 </script>
-
-
 
 <header>
     <Header {user}/>
