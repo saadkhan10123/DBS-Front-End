@@ -17,10 +17,8 @@
     <form method="POST" action="/sign-in?/login" use:enhance={({ submitter }) => {
         password = ''
         submitter.disabled = true;
-        return async( { result } ) => {
-            console.log(result);
+        return async({ result }) => {
             if (result.type === "success") {
-                console.log("success");
                 goto("/home");
             } else {
                 await applyAction(result);

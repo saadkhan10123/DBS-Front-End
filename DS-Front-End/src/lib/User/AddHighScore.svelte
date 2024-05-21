@@ -31,6 +31,7 @@
         return ({ result }) => {
             console.log(result);
             if (result.type === "success") {
+                window.alert("Highscore added successfully");
                 disableModal();
             } else {
                 submitter.disabled = false;

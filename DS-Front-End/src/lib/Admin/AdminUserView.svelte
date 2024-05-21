@@ -24,7 +24,7 @@
     <div class="user-info">
         <h2>{user.username}</h2>
         <p>Email ID: {user.email}</p>
-        <p>Nationality; {user.nationality}</p>
+        <p>Nationality: {user.nationality}</p>
         <button on:click={sendDelReq}>Delete Account</button>
     </div>
 </div>

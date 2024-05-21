@@ -21,9 +21,10 @@
 <div class="add-game">
     <div class="add-game-container">
         <h1>Add Game</h1>
-        <form method="POST" action="?/addGame" use:enhance={({ submitter, formData }) => {
-            console.log()
+        <form method="POST" action="?/addGame" use:enhance={({ submitter, formData, formElement }) => {
             submitter.disable = true;
+
+            console.log(formElement);
 
             formData.append("image", gameImage);
 
@@ -31,6 +32,8 @@
                 console.log(result);
                 if (result.type === "success") {
                     submitter.disable = false;
+                    window.alert("Game added successfully");
+                    
                 }
             }
         }}>
