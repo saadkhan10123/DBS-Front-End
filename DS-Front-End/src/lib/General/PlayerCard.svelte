@@ -49,6 +49,11 @@
         border-radius: 50%;
     }
 
+    .name {
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+
     .info-container {
         height: 200px;
     }
