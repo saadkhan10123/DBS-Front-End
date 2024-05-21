@@ -40,7 +40,9 @@
 <div class="score-card">
     <div class="score-info">
 
-        <img src={'data:image/jpeg;base64,' + score.proof_image.substring(20)} alt="proof">
+        <div class="image-container">
+            <img src={'data:image/jpeg;base64,' + score.proof_image.substring(20)} alt="proof">
+        </div>
         <h2>{score.username}</h2>
         <p>Score: {score.total_score}</p>
         <p>Time: {score.submission_date}</p>
@@ -56,6 +58,7 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        padding-top: 2em;
     }
 
     .score-card {
@@ -66,7 +69,7 @@
         background-color: #222222;
         color: white;
         border-radius: 1em;
-        width: 60%;
+        width: 50%;
     }
 
     .score-info {
@@ -77,14 +80,25 @@
         padding: 12px 32px;
         border-radius: 1em;
         font-size: 1em;
-        background-color: #ff6961;
+        background-color: #f74d40;
         color: white;
         border: none;
     }
 
+    button:hover {
+        background-color: #ff6961;
+    }
+    
+    .image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
     img {
-        width: 100%;
-        height: 200px;
+        width: 50%;
+        height: 100%;
         object-fit: fill;
         border-radius: 1rem;
     }
