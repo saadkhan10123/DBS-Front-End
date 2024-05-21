@@ -37,28 +37,30 @@
             }
         }
     } }>
-        <label for="game-name">Game Name</label>
+        <label for="game-name">Game Name <small>*</small></label>
         <select name="game_id" required>
             {#each games as game}
                 <option value="{game.game_id}">{game.title}</option>
             {/each}
         </select>
-        <label for="score">Score</label>
+        <label for="score">Score <small>*</small></label>
         <input type="number" name="score" required>
-        <label for="game-image">Proof Image</label>
+        <label for="game-image">Proof Image <small>*</small></label>
 
         <div class="image-container">
             {#if proofImage}
                 <img class="proof-image" src="{proofImage}" alt="d" on:click={()=>{fileinput.click();}}/>
             {:else}
-                <img class="proof-image" src="https://cdn4.iconfinder.com/data/icons/small-n-flat/24/user-alt-512.png" alt="" on:click={()=>{fileinput.click();}}/> 
+                <img class="proof-image" src="\default.png" alt="" on:click={()=>{fileinput.click();}}/> 
             {/if}
-            <div class="chan" on:click={()=>{fileinput.click();}}>Choose Image</div>
+            <div class="chan" on:click={()=>{fileinput.click();}}></div>
             <input style="display:none" type="file" accept=".jpg, .jpeg" on:change={(e)=>onFileSelected(e)} bind:this={fileinput} >
         </div>
 
-        <button type="submit">Add Highscore</button>
-        <button type="button" on:click={disableModal}>Cancel</button>
+        <div class="button-container">
+            <button type="submit">Add Highscore</button>
+            <button type="button" on:click={disableModal}>Cancel</button>
+        </div>
     </form>
 </Modal>
 
@@ -71,25 +73,48 @@
         padding: 1rem;
         border-radius: 1rem;
         color: white;
-        width: 40svw;
+        width: 24svw;
     }
 
     label {
-        font-size: 1.2em;
+        padding: 8px 10px;
+        font-size: 16px;
+        color: white;
+    }
+
+    small {
+        color: #f74d40;
+    }
+
+    input, select {
+        padding: 8px 8px;
+        border: 1px solid #ff6961;
+        background-color: #1a1a1a;
+        color: white;
+        border-radius: 4px;
+        font-size: 12px;
+    }
+
+    .image-container {
+        margin: auto;
+        align-items: center;
     }
 
     .proof-image {
-        width: 100%;
-        height: 200px;
         object-fit: fill;
-        border-radius: 1rem;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
     }
 
     button {
-        background-color: #121212;
+        background-color: #f74d40;
         width: 50%;
         align-self: center;
         border: none;
+        margin: 1em;
     }
 
     button:hover {
