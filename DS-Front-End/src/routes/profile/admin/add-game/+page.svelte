@@ -85,6 +85,14 @@
         align-items: center;
     }
 
+    img {
+        object-fit: fill;
+        width: 100%;
+        height: 100%;
+        max-width: 225px; 
+        max-height: 225px;
+    }
+
     form {
         display: flex;
         flex-direction: column;
