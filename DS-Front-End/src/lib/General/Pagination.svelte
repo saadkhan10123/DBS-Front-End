@@ -1,3 +1,0 @@
-<script>
-    const currUrl = 
-</script>
